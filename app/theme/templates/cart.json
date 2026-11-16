@@ -1,0 +1,29 @@
+{
+  "title": "Cart",
+  "sections": [
+    {
+      "id": "cart-items",
+      "type": "cart_items",
+      "props": {
+        "cart": "current",
+        "continue_href": "/products",
+        "products": {
+          "from": "cart_products",
+          "limit": 8
+        }
+      }
+    },
+    {
+      "id": "cart-summary",
+      "type": "cart_summary",
+      "props": {
+        "cart": "current",
+        "cross_sells": {
+          "from": "cart_cross_sells",
+          "limit": 4
+        },
+        "show_note": "hide"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Product",
+  "sections": [
+    {
+      "id": "details",
+      "type": "product_details",
+      "props": {
+        "show_attributes": "show",
+        "points": [],
+        "details": []
+      }
+    },
+    {
+      "id": "related",
+      "type": "product_grid",
+      "props": {
+        "heading": "You may also like",
+        "link_label": "Shop all",
+        "link_href": "/products",
+        "products": {
+          "from": "related",
+          "limit": 4
+        }
+      }
+    }
+  ]
+}

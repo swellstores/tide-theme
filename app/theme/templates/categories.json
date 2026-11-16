@@ -1,0 +1,17 @@
+{
+  "title": "Categories",
+  "sections": [
+    {
+      "id": "categories",
+      "type": "collection_list",
+      "props": {
+        "heading": "Categories",
+        "collections": {
+          "from": "top",
+          "limit": 24
+        },
+        "page_list": "yes"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": [
+    {
+      "id": "footer",
+      "type": "footer",
+      "props": {
+        "menu": "footer_menu",
+        "newsletter": "hide"
+      }
+    }
+  ]
+}

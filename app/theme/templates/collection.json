@@ -1,0 +1,25 @@
+{
+  "title": "Collection",
+  "sections": [
+    {
+      "id": "collection-header",
+      "type": "collection_header",
+      "props": {
+        "show_children": "show"
+      }
+    },
+    {
+      "id": "products",
+      "type": "product_grid",
+      "props": {
+        "products": {
+          "from": "collection",
+          "collection": "current",
+          "limit": 24
+        },
+        "show_sort": "show",
+        "show_filters": "show"
+      }
+    }
+  ]
+}

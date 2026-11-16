@@ -1,0 +1,13 @@
+{
+  "title": "Page",
+  "sections": [
+    {
+      "id": "content",
+      "type": "page_content",
+      "props": {
+        "page": "current",
+        "width": "narrow"
+      }
+    }
+  ]
+}

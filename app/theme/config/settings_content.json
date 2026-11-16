@@ -1,0 +1,26 @@
+{
+  "fields": [
+    {
+      "type": "field_group",
+      "label": "Header",
+      "fields": [
+        { "id": "sticky_header", "label": "Keep the header in view while scrolling", "type": "toggle", "default": true }
+      ]
+    },
+    {
+      "type": "field_group",
+      "label": "Product cards",
+      "description": "How products show in category pages, search results and product lists.",
+      "fields": [
+        {
+          "id": "card_quick_add", "label": "Quick add", "type": "toggle", "default": false,
+          "description": "An Add button under each card. A product with options gets a Choose options link instead."
+        },
+        {
+          "id": "card_swatches", "label": "Color dots", "type": "slider", "default": 0, "min": 0, "max": 8, "increment": 1,
+          "description": "How many of a product's color or material swatches each card shows. 0: none."
+        }
+      ]
+    }
+  ]
+}

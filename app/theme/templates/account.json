@@ -1,0 +1,12 @@
+{
+  "title": "Account",
+  "sections": [
+    {
+      "id": "account",
+      "type": "account_view",
+      "props": {
+        "account": "current"
+      }
+    }
+  ]
+}

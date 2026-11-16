@@ -1,0 +1,12 @@
+{
+  "title": "Policy",
+  "sections": [
+    {
+      "id": "policy",
+      "type": "policy_text",
+      "props": {
+        "policy": "current"
+      }
+    }
+  ]
+}

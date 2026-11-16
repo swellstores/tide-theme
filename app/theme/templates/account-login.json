@@ -1,0 +1,12 @@
+{
+  "title": "Sign in",
+  "sections": [
+    {
+      "id": "login",
+      "type": "login_form",
+      "props": {
+        "auth": "current"
+      }
+    }
+  ]
+}

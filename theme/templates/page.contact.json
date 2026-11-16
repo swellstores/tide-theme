@@ -1,0 +1,29 @@
+{
+  "title": "Contact page",
+  "sections": [
+    {
+      "id": "content",
+      "type": "page_content",
+      "props": {
+        "page": "current",
+        "width": "wide"
+      }
+    },
+    {
+      "id": "contact",
+      "type": "contact_details",
+      "props": {
+        "heading": "Contact us"
+      }
+    },
+    {
+      "id": "newsletter",
+      "type": "email_signup",
+      "props": {
+        "heading": "Stay in touch",
+        "text": "Sign up to get emails from us.",
+        "button_label": "Subscribe"
+      }
+    }
+  ]
+}

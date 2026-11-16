@@ -1,0 +1,32 @@
+{
+  "title": "Search",
+  "sections": [
+    {
+      "id": "results",
+      "type": "search_results",
+      "props": {
+        "popular": [],
+        "columns": "4",
+        "products": {
+          "from": "search",
+          "limit": 12
+        },
+        "show_sort": "show"
+      }
+    },
+    {
+      "id": "popular-now",
+      "type": "product_grid",
+      "props": {
+        "heading": "Popular right now",
+        "link_label": "View all",
+        "link_href": "/products",
+        "products": {
+          "from": "all",
+          "sort": "best_selling",
+          "limit": 4
+        }
+      }
+    }
+  ]
+}

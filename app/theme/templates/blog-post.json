@@ -1,0 +1,25 @@
+{
+  "title": "Blog post",
+  "sections": [
+    {
+      "id": "post",
+      "type": "post_body",
+      "props": {
+        "post": "current"
+      }
+    },
+    {
+      "id": "more-posts",
+      "type": "post_list",
+      "props": {
+        "heading": "More posts",
+        "posts": {
+          "from": "blog",
+          "blog": "current",
+          "limit": 3
+        },
+        "columns": "3"
+      }
+    }
+  ]
+}

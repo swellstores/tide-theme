@@ -1,0 +1,17 @@
+{
+  "menus": [
+    {
+      "id": "main_menu",
+      "label": "Header",
+      "max_items": 8,
+      "child_items": { "max_items": 12, "child_items": false }
+    },
+    {
+      "id": "footer_menu",
+      "label": "Footer",
+      "columns": true,
+      "max_columns": 4,
+      "child_items": { "max_items": 8, "child_items": false }
+    }
+  ]
+}

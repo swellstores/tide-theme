@@ -1,0 +1,45 @@
+{
+  "title": "About page",
+  "sections": [
+    {
+      "id": "content",
+      "type": "page_content",
+      "props": {
+        "page": "current",
+        "width": "wide"
+      }
+    },
+    {
+      "id": "story",
+      "type": "story",
+      "props": {
+        "artwork": "none",
+        "layout": "left",
+        "tone": "sand"
+      }
+    },
+    {
+      "id": "products",
+      "type": "product_grid",
+      "props": {
+        "heading": "Products",
+        "link_label": "Shop all",
+        "link_href": "/products",
+        "products": {
+          "from": "all",
+          "sort": "best_selling",
+          "limit": 4
+        }
+      }
+    },
+    {
+      "id": "newsletter",
+      "type": "email_signup",
+      "props": {
+        "heading": "Stay in touch",
+        "text": "Sign up to get emails from us.",
+        "button_label": "Subscribe"
+      }
+    }
+  ]
+}

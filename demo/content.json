@@ -1,0 +1,3354 @@
+{
+  "format": 1,
+  "theme": "theme-tide",
+  "store": {
+    "name": "Cuffwell",
+    "tagline": "Shirts, made properly.",
+    "currency": "USD",
+    "locale": "en-US",
+    "email": "hello@cuffwell.example",
+    "phone": "(828) 555-0162",
+    "address": {
+      "address1": "214 Spindle Street",
+      "city": "Hollis Mill",
+      "state": "NC",
+      "zip": "28799",
+      "country": "US"
+    },
+    "ship_to": [
+      "US",
+      "CA"
+    ],
+    "shipping": {
+      "name": "Standard shipping",
+      "price": 8,
+      "free_over": 150
+    },
+    "voice": "Confident, specific and a little dry. Short declarative sentences. We talk in ounces, stitches per inch and wash counts, not adjectives. We say what a shirt is for and how to wear it, and we're allowed one joke per paragraph. Never 'elevated', 'curated', 'timeless' or exclamation marks.",
+    "story": "Cuffwell was started in 2019 by June Ashcombe, a pattern cutter who spent twelve years cutting shirts for other labels and got tired of watching collars cut corners. She rented the ground floor of a former hosiery mill in Hollis Mill, North Carolina, with one cutting table and two sewing machines. Today a workroom of eleven cuts every pattern there and sews the tees, twill and canvas; oxfords, flannels and linen are sewn by two family workshops in northern Portugal, polos and knits in Peru, chambray in Japan. The range is small on purpose: about two dozen things, most of them shirts. The name is a pattern cutter's compliment: a cuff set well. All people and places here are invented for the demo.",
+    "policies": {
+      "refund": "<p>Return anything unworn and unwashed within 30 days of delivery, with its tags on, for a full refund to your original payment method. Returns are free in the US: write to hello@cuffwell.example with your order number and we'll send a prepaid label. From Canada, return shipping is $12, taken from your refund.</p><p>Want a different size? Exchanges are free and we ship the new size as soon as your return is scanned, not when it arrives.</p><p>Sale items can be returned within 14 days. Socks can't be returned once worn, for reasons we trust you understand.</p><p>If a seam fails within two years, send us a photo. We'll repair the shirt, replace it, or refund it: your choice.</p>",
+      "shipping": "<p>We ship to the United States and Canada. Orders leave our Hollis Mill workroom within two business days, folded in tissue in a recycled box.</p><p>Standard shipping is $8, and free on orders over $150. US orders usually arrive in 3–5 business days, Canadian orders in 5–9. Canadian orders may owe duties and taxes on delivery.</p><p>Tee subscriptions always ship free.</p>",
+      "privacy": "<p>We keep what we need to send your order and answer your email: your name, email, shipping address, what you bought and your sizes. Payments are handled by our payment provider; we never see or store your card number.</p><p>If you sign up for our monthly email, we use your address for that and nothing else, and every email has a one-click unsubscribe. We don't sell or share your information with anyone.</p><p>To see, correct or delete what we hold about you, write to hello@cuffwell.example and we'll do it within 30 days.</p>",
+      "terms": "<p>These terms apply when you buy from Cuffwell, 214 Spindle Street, Hollis Mill, NC 28799. By placing an order you agree to them.</p><p>Prices are in US dollars and include no tax; tax is added at checkout where it applies. We do our best to show colors accurately, but screens vary, and indigo, linen and garment-dyed pieces vary a little from batch to batch.</p><p>An order is accepted when we send your shipping confirmation. If we can't fill it, for example because the last of a size sold while you were checking out, we refund you in full straight away.</p><p>Subscriptions renew on their schedule until you skip or cancel them from your account, which you can do any time before the next renewal.</p><p>Returns and refunds follow our refund policy. These terms are governed by the laws of North Carolina. Questions: hello@cuffwell.example or (828) 555-0162.</p>"
+    }
+  },
+  "art_direction": "Cuffwell, a small shirt brand with a clean, editorial look on a plain white website. Real-photo style, never illustration or 3D. LIGHT: soft, even north daylight from one side, low contrast, gentle soft-edged shadows; never flash, hard sun or orange golden-hour glow. BACKGROUNDS: product shots on a seamless very light gray or white studio sweep, matte, with nothing else in frame; scenes against plain white or pale gray walls, pale oak, raw concrete. PALETTE: white, bone, ecru, light gray and charcoal, with the garments' own colors (oxford blue, indigo, olive, rust, navy, tobacco) as the only color; calm, true-to-life, slightly desaturated. GARMENTS: true-to-life cotton, linen, wool and flannel with crisp, visible weave and texture, neatly pressed or naturally creased, well made, buttons and stitching sharp; every garment completely plain. PEOPLE: invented adults only, always cropped at the neck or chin, seen from the chest down or from behind; never a face, never a recognizable person, no tattoos, no jewelry beyond a plain watch. COMPOSITION: generous negative space, the subject centered or placed with clear intent, straight-on or slight three-quarter angles; a 50–85 mm lens look, true proportions, fine natural grain. ALWAYS AVOID: any text, letters, numbers, logos, brand marks, labels, neck tags, hang tags, patches or embroidery, signage, watermarks; clutter and props; saturated or neon color; mannequins, hangers with logos; a CGI look; heavy vignettes.",
+  "attributes": [
+    {
+      "id": "fabric",
+      "name": "Fabric",
+      "type": "select",
+      "visible": true,
+      "filterable": true,
+      "values": [
+        "Cotton jersey",
+        "Slub cotton jersey",
+        "Oxford cloth",
+        "Cotton poplin",
+        "Chambray",
+        "Wool blend",
+        "Cotton twill",
+        "Corduroy",
+        "Cotton canvas",
+        "Brushed flannel",
+        "Linen",
+        "Cotton piqué",
+        "Knit cotton",
+        "Waffle knit",
+        "Cotton-blend rib"
+      ]
+    },
+    {
+      "id": "fit",
+      "name": "Fit",
+      "type": "select",
+      "visible": true,
+      "filterable": true,
+      "values": [
+        "Slim",
+        "Regular",
+        "Relaxed",
+        "Boxy"
+      ]
+    },
+    {
+      "id": "sleeve",
+      "name": "Sleeve",
+      "type": "select",
+      "visible": true,
+      "filterable": true,
+      "values": [
+        "Short sleeve",
+        "Long sleeve"
+      ]
+    },
+    {
+      "id": "collar",
+      "name": "Collar",
+      "type": "select",
+      "visible": true,
+      "filterable": true,
+      "values": [
+        "Crew",
+        "Button-down",
+        "Spread",
+        "Point",
+        "Camp",
+        "Polo",
+        "Henley"
+      ]
+    },
+    {
+      "id": "weight",
+      "name": "Fabric weight",
+      "type": "text",
+      "visible": true,
+      "filterable": false,
+      "values": []
+    },
+    {
+      "id": "made_in",
+      "name": "Made in",
+      "type": "select",
+      "visible": true,
+      "filterable": true,
+      "values": [
+        "USA",
+        "Portugal",
+        "Peru",
+        "Japan"
+      ]
+    },
+    {
+      "id": "care",
+      "name": "Care",
+      "type": "textarea",
+      "visible": true,
+      "filterable": false,
+      "values": []
+    }
+  ],
+  "categories": [
+    {
+      "slug": "tees",
+      "name": "Tees",
+      "parent": null,
+      "description": "Heavyweight, pocket, long-sleeve and slub: four tees, knitted in the Carolinas and washed before cutting so they keep their size.",
+      "image": {
+        "prompt": "Overhead studio photo of a neat row of heavyweight cotton crew-neck T-shirts folded into squares, in white, bone, heather gray, navy and black, evenly spaced in one horizontal line across the middle of the frame on a seamless very light gray surface, soft daylight from the left, wide empty space above and below.",
+        "size": "1536x1024"
+      }
+    },
+    {
+      "slug": "oxfords",
+      "name": "Oxfords & button-downs",
+      "parent": null,
+      "description": "Oxford cloth, poplin and chambray, with collars that roll instead of collapse. Where Cuffwell started.",
+      "image": {
+        "prompt": "Studio photo of four cotton button-down shirts on plain wooden hangers hanging side by side from a slim steel rail, in white, pale blue, a blue and white stripe and ecru, against a seamless white wall, soft daylight from the left, the collars and cuffs crisp, plenty of empty wall above.",
+        "size": "1536x1024"
+      }
+    },
+    {
+      "slug": "overshirts",
+      "name": "Overshirts & jackets",
+      "parent": null,
+      "description": "Wool, twill, corduroy and canvas: shirts in cut, jackets in weight, for the months between.",
+      "image": {
+        "prompt": "Studio photo of a charcoal wool overshirt and a natural canvas chore jacket hanging from two wooden pegs on a white wall, slightly overlapping, sleeves falling naturally, soft daylight from the left casting gentle shadows, wide empty wall to the right.",
+        "size": "1536x1024"
+      }
+    },
+    {
+      "slug": "flannels",
+      "name": "Flannels",
+      "parent": null,
+      "description": "Brushed on both sides, checks matched at every pocket. Three weights, from a shirt to nearly a jacket.",
+      "image": {
+        "prompt": "Close, overhead studio photo of a tall stack of folded cotton flannel shirts in rust, pine-green, gray and navy checks, slightly offset, on a seamless very light gray surface, soft daylight raking from the left so the brushed, fuzzy fabric texture shows, the stack placed right of center with empty space to the left.",
+        "size": "1536x1024"
+      }
+    },
+    {
+      "slug": "linen",
+      "name": "Linen",
+      "parent": null,
+      "description": "Washed linen shirts for heat, with creases that are meant to be there.",
+      "image": {
+        "from_product": "linen-camp-shirt"
+      }
+    },
+    {
+      "slug": "polos-henleys",
+      "name": "Polos & henleys",
+      "parent": null,
+      "description": "Piqué, knit and waffle: the shirts with fewer buttons.",
+      "image": {
+        "from_product": "knit-polo"
+      }
+    },
+    {
+      "slug": "caps-socks",
+      "name": "Caps & socks",
+      "parent": null,
+      "description": "A plain cap and good socks. The only things we make that aren't shirts.",
+      "image": {
+        "from_product": "crew-socks-three-pack"
+      }
+    }
+  ],
+  "products": [
+    {
+      "slug": "heavyweight-crew-tee",
+      "name": "Heavyweight Crew Tee",
+      "description_html": "<p>The tee the rest of the shop is built around. Thick enough to wear on its own, with a collar that lies flat after a hundred washes instead of rippling. If you buy one thing from us, buy this, in every color.</p><h3>Details</h3><ul><li>Taped shoulder and back-neck seams</li><li>Double-needle hem and cuffs</li><li>Tubular body: no side seams</li></ul><h3>Fabric</h3><p>7.2 oz combed cotton jersey, knitted on slow tubular machines in North Carolina, so there are no side seams to twist. The collar is a 1x1 rib with a taped back neck.</p><h3>Fit</h3><p>Regular fit: straight through the body, a slightly dropped shoulder, and a hem that covers the waistband. Take your usual size. Between sizes, go down for a closer fit.</p><h3>Care</h3><p>Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%.</p>",
+      "price": 42,
+      "sale_price": null,
+      "categories": [
+        "tees"
+      ],
+      "tags": [
+        "bestseller",
+        "essentials"
+      ],
+      "attributes": {
+        "fabric": "Cotton jersey",
+        "fit": "Regular",
+        "sleeve": "Short sleeve",
+        "collar": "Crew",
+        "weight": "7.2 oz",
+        "made_in": "USA",
+        "care": "Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "White",
+              "price": 0,
+              "color": "#f7f7f4"
+            },
+            {
+              "name": "Bone",
+              "price": 0,
+              "color": "#e9e3d6"
+            },
+            {
+              "name": "Heather Gray",
+              "price": 0,
+              "color": "#b9babb"
+            },
+            {
+              "name": "Navy",
+              "price": 0,
+              "color": "#1f2a44"
+            },
+            {
+              "name": "Black",
+              "price": 0,
+              "color": "#1b1b1b"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 240,
+        "status": "in_stock"
+      },
+      "subscription_plans": [
+        {
+          "name": "A fresh tee every 3 months",
+          "interval": "monthly",
+          "interval_count": 3,
+          "price": 36,
+          "trial_days": 0,
+          "description": "One tee every 3 months, in your size and color · Save $6 on every tee · Skip or cancel any time"
+        }
+      ],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "three-tee-pack",
+        "long-sleeve-tee",
+        "classic-oxford"
+      ],
+      "cross_sells": [
+        {
+          "product": "crew-socks-three-pack",
+          "discount_percent": null
+        },
+        {
+          "product": "six-panel-cap",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a heavyweight plain white cotton crew-neck T-shirt with a thick ribbed collar and a slightly dropped shoulder, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Dense, matte jersey with a visible fine knit texture.",
+          "alt": "Heavyweight Crew Tee in White",
+          "size": "1024x1536"
+        },
+        {
+          "prompt": "An invented man seen from behind and cropped at the neck, wearing a bone-colored heavyweight crew-neck T-shirt tucked loosely into faded khaki trousers, standing against a plain white wall in soft window light, the tee's shoulder seam and hem falling cleanly, no face visible.",
+          "alt": "Heavyweight Crew Tee in Bone, worn, seen from behind",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null,
+      "variant_stock": [
+        {
+          "values": {
+            "Color": "Bone",
+            "Size": "XS"
+          },
+          "level": 0
+        }
+      ]
+    },
+    {
+      "slug": "pocket-tee",
+      "name": "Pocket Tee",
+      "description_html": "<p>A looser, softer tee with a pocket that is exactly big enough for sunglasses and nothing heavier. Garment-dyed after sewing, so every color looks a season older than it is.</p><h3>Fabric</h3><p>6 oz ring-spun cotton jersey, garment-dyed and enzyme-washed for a soft hand from the first wear.</p><h3>Fit</h3><p>Relaxed fit: a little wider in the body and sleeve than our Heavyweight Crew Tee, with a shorter, straight hem that looks right untucked.</p><h3>Care</h3><p>Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%.</p>",
+      "price": 38,
+      "sale_price": null,
+      "categories": [
+        "tees"
+      ],
+      "tags": [
+        "new"
+      ],
+      "attributes": {
+        "fabric": "Cotton jersey",
+        "fit": "Relaxed",
+        "sleeve": "Short sleeve",
+        "collar": "Crew",
+        "weight": "6 oz",
+        "made_in": "USA",
+        "care": "Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "White",
+              "price": 0,
+              "color": "#f7f7f4"
+            },
+            {
+              "name": "Sage",
+              "price": 0,
+              "color": "#a7b39b"
+            },
+            {
+              "name": "Faded Navy",
+              "price": 0,
+              "color": "#3b4a66"
+            },
+            {
+              "name": "Rust",
+              "price": 0,
+              "color": "#a5532f"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 150,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "heavyweight-crew-tee",
+        "linen-camp-shirt"
+      ],
+      "cross_sells": [
+        {
+          "product": "six-panel-cap",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a relaxed, slightly boxy sage-green cotton crew-neck T-shirt with one plain patch pocket on the left chest, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Soft, garment-dyed jersey with a gently faded look.",
+          "alt": "Pocket Tee in Sage",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "long-sleeve-tee",
+      "name": "Long Sleeve Tee",
+      "description_html": "<p>Our heavyweight jersey with sleeves to the wrist and ribbed cuffs that stay where you push them. A layer under a flannel in November, a shirt on its own in March.</p><h3>Fabric</h3><p>7.2 oz combed cotton jersey, the same cloth as the Heavyweight Crew Tee. 1x1 rib at the collar and cuffs.</p><h3>Fit</h3><p>Regular fit, with sleeves cut an inch longer than usual so they stack slightly at the wrist.</p><h3>Care</h3><p>Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%.</p>",
+      "price": 48,
+      "sale_price": null,
+      "categories": [
+        "tees"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Cotton jersey",
+        "fit": "Regular",
+        "sleeve": "Long sleeve",
+        "collar": "Crew",
+        "weight": "7.2 oz",
+        "made_in": "USA",
+        "care": "Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "White",
+              "price": 0,
+              "color": "#f7f7f4"
+            },
+            {
+              "name": "Heather Gray",
+              "price": 0,
+              "color": "#b9babb"
+            },
+            {
+              "name": "Olive",
+              "price": 0,
+              "color": "#5f6146"
+            },
+            {
+              "name": "Black",
+              "price": 0,
+              "color": "#1b1b1b"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 120,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "heavyweight-crew-tee",
+        "brushed-flannel-shirt"
+      ],
+      "cross_sells": [
+        {
+          "product": "crew-socks-three-pack",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a heather-gray heavyweight long-sleeve cotton crew-neck T-shirt with ribbed cuffs, sleeves hanging straight at the sides, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below.",
+          "alt": "Long Sleeve Tee in Heather Gray",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "slub-tee",
+      "name": "Slub Tee",
+      "description_html": "<p>A light, textured summer tee, cut short and square. The last of this season's run, marked down to make room for flannel.</p><h3>Fabric</h3><p>5 oz Peruvian pima cotton in an irregular slub yarn, so the surface has a dry, uneven texture you can see from across a room.</p><h3>Fit</h3><p>Boxy fit: wide through the body and short in length, with sleeves that end mid-bicep. Size down for a closer fit.</p><h3>Care</h3><p>Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%.</p>",
+      "price": 40,
+      "sale_price": 29,
+      "categories": [
+        "tees"
+      ],
+      "tags": [
+        "sale"
+      ],
+      "attributes": {
+        "fabric": "Slub cotton jersey",
+        "fit": "Boxy",
+        "sleeve": "Short sleeve",
+        "collar": "Crew",
+        "weight": "5 oz",
+        "made_in": "Peru",
+        "care": "Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Ecru",
+              "price": 0,
+              "color": "#ece4d2"
+            },
+            {
+              "name": "Washed Black",
+              "price": 0,
+              "color": "#3a3a3a"
+            },
+            {
+              "name": "Dusty Blue",
+              "price": 0,
+              "color": "#8ea3b5"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 70,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "pocket-tee",
+        "linen-camp-shirt"
+      ],
+      "cross_sells": [],
+      "images": [
+        {
+          "prompt": "Studio product photo of a boxy, cropped ecru cotton T-shirt in an uneven slub jersey with visible thick-and-thin yarn texture, short wide sleeves, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below.",
+          "alt": "Slub Tee in Ecru",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "three-tee-pack",
+      "name": "Three-Tee Pack",
+      "description_html": "<p>Three Heavyweight Crew Tees for $108 instead of $126. Choose the size and color of each one when you add it to your cart: three whites, or one of each.</p><h3>Fabric</h3><p>7.2 oz combed cotton jersey on a tubular knit, the same as every Heavyweight Crew Tee.</p><h3>Fit</h3><p>Regular fit. Take your usual size.</p><h3>Care</h3><p>Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%.</p>",
+      "price": 108,
+      "sale_price": null,
+      "categories": [
+        "tees"
+      ],
+      "tags": [
+        "bundle",
+        "essentials"
+      ],
+      "attributes": {
+        "fabric": "Cotton jersey",
+        "fit": "Regular",
+        "sleeve": "Short sleeve",
+        "collar": "Crew",
+        "weight": "7.2 oz",
+        "made_in": "USA",
+        "care": "Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%."
+      },
+      "options": [],
+      "stock": {
+        "tracking": true,
+        "level": 60,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [
+        {
+          "product": "heavyweight-crew-tee",
+          "quantity": 3
+        }
+      ],
+      "up_sells": [
+        "heavyweight-crew-tee"
+      ],
+      "cross_sells": [
+        {
+          "product": "crew-socks-three-pack",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of three heavyweight cotton crew-neck T-shirts folded neatly into squares and stacked, white on top, then bone, then black, the collars lined up, on a seamless very light gray background, soft daylight from the left, a soft shadow, wide empty space around it.",
+          "alt": "Three-Tee Pack: three folded Heavyweight Crew Tees",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null,
+      "type": "bundle"
+    },
+    {
+      "slug": "classic-oxford",
+      "name": "Classic Oxford Shirt",
+      "description_html": "<p>The shirt Cuffwell started with, and still the one we sell most. A soft collar with a proper roll, a back box pleat, and cuffs set with two buttons so you can wear them loose or close.</p><h3>Details</h3><ul><li>3.25 in collar points with a 3 in roll</li><li>Back box pleat and locker loop</li><li>Two-button adjustable cuffs</li><li>Mother-of-pearl-look buttons, sewn with a shank</li></ul><h3>Fabric</h3><p>4.5 oz two-ply cotton oxford cloth from a mill in northern Portugal, woven slightly loose so it softens fast and breathes in summer.</p><h3>Fit</h3><p>Regular fit: room through the chest and a gentle taper to a curved hem that tucks in and stays tucked. Take your usual size; see the fit guide for chest measurements.</p><h3>Care</h3><p>Machine wash warm. Hang to dry and it barely needs an iron; press the collar points if you care, and we think you should.</p>",
+      "price": 88,
+      "sale_price": null,
+      "categories": [
+        "oxfords"
+      ],
+      "tags": [
+        "bestseller"
+      ],
+      "attributes": {
+        "fabric": "Oxford cloth",
+        "fit": "Regular",
+        "sleeve": "Long sleeve",
+        "collar": "Button-down",
+        "weight": "4.5 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash warm. Hang to dry and it barely needs an iron; press the collar points if you care, and we think you should."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "White",
+              "price": 0,
+              "color": "#f7f7f4"
+            },
+            {
+              "name": "Blue",
+              "price": 0,
+              "color": "#a9c4df"
+            },
+            {
+              "name": "Ecru",
+              "price": 0,
+              "color": "#ece4d2"
+            },
+            {
+              "name": "Pale Pink",
+              "price": 0,
+              "color": "#efd3d0"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 200,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "stripe-oxford",
+        "wool-overshirt",
+        "knit-polo"
+      ],
+      "cross_sells": [
+        {
+          "product": "heavyweight-crew-tee",
+          "discount_percent": null
+        },
+        {
+          "product": "six-panel-cap",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a classic pale blue cotton oxford cloth shirt with a soft button-down collar, a single chest pocket and long sleeves, fully buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Visible basket-weave texture of the oxford cloth.",
+          "alt": "Classic Oxford Shirt in Blue",
+          "size": "1024x1536"
+        },
+        {
+          "prompt": "Close crop of an invented person's torso and forearm, chin and face out of frame, wearing a white oxford button-down shirt with the sleeve rolled twice above the wrist, one hand in the pocket of navy trousers, against a white wall in soft side light.",
+          "alt": "Classic Oxford Shirt in White, worn with the sleeves rolled",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null,
+      "variant_stock": [
+        {
+          "values": {
+            "Color": "Blue",
+            "Size": "S"
+          },
+          "level": 0
+        }
+      ]
+    },
+    {
+      "slug": "stripe-oxford",
+      "name": "University Stripe Oxford",
+      "description_html": "<p>Our Classic Oxford in a wide, even stripe: louder than a solid, quieter than a check. It looks right with jeans, chinos, and the sleeves pushed up.</p><h3>Fabric</h3><p>4.5 oz yarn-dyed cotton oxford cloth, woven in Portugal. The stripe is in the yarn, not printed, so it never fades out of line.</p><h3>Fit</h3><p>Regular fit, the same pattern as the Classic Oxford.</p><h3>Care</h3><p>Machine wash warm. Hang to dry and it barely needs an iron; press the collar points if you care, and we think you should.</p>",
+      "price": 94,
+      "sale_price": null,
+      "categories": [
+        "oxfords"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Oxford cloth",
+        "fit": "Regular",
+        "sleeve": "Long sleeve",
+        "collar": "Button-down",
+        "weight": "4.5 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash warm. Hang to dry and it barely needs an iron; press the collar points if you care, and we think you should."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Blue Stripe",
+              "price": 0,
+              "color": "#9db7d6"
+            },
+            {
+              "name": "Navy Stripe",
+              "price": 0,
+              "color": "#44587a"
+            },
+            {
+              "name": "Green Stripe",
+              "price": 0,
+              "color": "#7f9a84"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 90,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "classic-oxford",
+        "twill-overshirt"
+      ],
+      "cross_sells": [
+        {
+          "product": "knit-polo",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a cotton oxford button-down shirt in a bold blue and white vertical stripe, a single chest pocket, long sleeves, fully buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below.",
+          "alt": "University Stripe Oxford in Blue Stripe",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "poplin-shirt",
+      "name": "Spread Collar Poplin Shirt",
+      "description_html": "<p>Our sharpest shirt, for days with a jacket or a reason. A spread collar with removable stays, a clean front with no pocket, and a slimmer body that sits close under tailoring.</p><h3>Details</h3><ul><li>Removable brass collar stays</li><li>Single-needle side seams at 18 stitches per inch</li><li>Square two-button cuffs</li></ul><h3>Fabric</h3><p>3.8 oz two-fold 100s cotton poplin. Smooth and cool, with a slight sheen that reads as pressed even when it isn't quite.</p><h3>Fit</h3><p>Slim fit: closer through the chest and waist than our oxfords. If you wear a Regular in our oxfords and like room, size up.</p><h3>Care</h3><p>Machine wash warm. Iron damp, collar first, then cuffs, yoke and body. Or send it out: it deserves it.</p>",
+      "price": 92,
+      "sale_price": null,
+      "categories": [
+        "oxfords"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Cotton poplin",
+        "fit": "Slim",
+        "sleeve": "Long sleeve",
+        "collar": "Spread",
+        "weight": "3.8 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash warm. Iron damp, collar first, then cuffs, yoke and body. Or send it out: it deserves it."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "White",
+              "price": 0,
+              "color": "#f7f7f4"
+            },
+            {
+              "name": "Pale Blue",
+              "price": 0,
+              "color": "#cddff0"
+            },
+            {
+              "name": "Black",
+              "price": 0,
+              "color": "#1b1b1b"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 80,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "classic-oxford",
+        "wool-overshirt"
+      ],
+      "cross_sells": [
+        {
+          "product": "crew-socks-three-pack",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a crisp white cotton poplin dress shirt with a wide spread collar, no pocket, long sleeves with square cuffs, fully buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Smooth, fine fabric with a soft sheen.",
+          "alt": "Spread Collar Poplin Shirt in White",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "washed-chambray-shirt",
+      "name": "Washed Chambray Shirt",
+      "description_html": "<p>A work shirt in soft indigo chambray, with two flap pockets and a point collar. Washed twice before it ships, so it starts out broken in and fades at its own pace after that.</p><h3>Fabric</h3><p>5 oz cotton chambray, rope-dyed indigo warp and white weft, woven on old shuttle looms in Okayama, Japan.</p><h3>Fit</h3><p>Regular fit, with a straight hem made to be worn out.</p><h3>Care</h3><p>Machine wash cold, inside out, with dark colors. Hang to dry. Indigo fades slowly with every wash; that is the point.</p>",
+      "price": 98,
+      "sale_price": null,
+      "categories": [
+        "oxfords"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Chambray",
+        "fit": "Regular",
+        "sleeve": "Long sleeve",
+        "collar": "Point",
+        "weight": "5 oz",
+        "made_in": "Japan",
+        "care": "Machine wash cold, inside out, with dark colors. Hang to dry. Indigo fades slowly with every wash; that is the point."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Light Indigo",
+              "price": 0,
+              "color": "#8aa3c2"
+            },
+            {
+              "name": "Mid Indigo",
+              "price": 0,
+              "color": "#4f6b94"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 70,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "canvas-chore-jacket",
+        "classic-oxford"
+      ],
+      "cross_sells": [
+        {
+          "product": "heavyweight-crew-tee",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a washed light indigo cotton chambray work shirt with two flap chest pockets, a point collar and long sleeves, fully buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Soft, slightly faded fabric with a fine white-and-blue weave.",
+          "alt": "Washed Chambray Shirt in Light Indigo",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "wool-overshirt",
+      "name": "Wool Overshirt",
+      "description_html": "<p>A shirt in cut and a jacket in weight: heavy enough for a cold morning, light enough to wear indoors all day. The piece people stop us in the street to ask about.</p><h3>Details</h3><ul><li>Two flap chest pockets and two hand-warmer side pockets</li><li>Cotton-lined yoke and sleeves</li><li>Corozo buttons</li></ul><h3>Fabric</h3><p>14 oz Italian recycled-wool melton (70% wool, 30% nylon), with a cotton-lined yoke and sleeves so it slides over a sweater.</p><h3>Fit</h3><p>Relaxed fit, cut a full size larger than our shirts to layer over one. Take your usual size.</p><h3>Care</h3><p>Dry clean, or hand wash cold and dry flat. Brush it after wearing and it will go years between cleans.</p>",
+      "price": 168,
+      "sale_price": null,
+      "categories": [
+        "overshirts"
+      ],
+      "tags": [
+        "bestseller",
+        "new"
+      ],
+      "attributes": {
+        "fabric": "Wool blend",
+        "fit": "Relaxed",
+        "sleeve": "Long sleeve",
+        "collar": "Point",
+        "weight": "14 oz",
+        "made_in": "Portugal",
+        "care": "Dry clean, or hand wash cold and dry flat. Brush it after wearing and it will go years between cleans."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Charcoal",
+              "price": 0,
+              "color": "#3d3e40"
+            },
+            {
+              "name": "Olive",
+              "price": 0,
+              "color": "#5f6146"
+            },
+            {
+              "name": "Camel",
+              "price": 0,
+              "color": "#b28a5c"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 80,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "canvas-chore-jacket",
+        "heavy-flannel-shirt"
+      ],
+      "cross_sells": [
+        {
+          "product": "heavyweight-crew-tee",
+          "discount_percent": null
+        },
+        {
+          "product": "six-panel-cap",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a charcoal-gray melton wool overshirt with two large flap chest pockets, horn-look buttons, a point collar and long sleeves, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Dense, matte, felted wool texture.",
+          "alt": "Wool Overshirt in Charcoal",
+          "size": "1024x1536"
+        },
+        {
+          "prompt": "An invented man seen from behind, cropped at the neck, wearing an olive wool overshirt over a white tee, one hand in a back pocket, standing against a pale gray seamless wall in soft daylight, the overshirt's straight back and shoulders crisp, no face visible.",
+          "alt": "Wool Overshirt in Olive, worn, seen from behind",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "twill-overshirt",
+      "name": "Twill Overshirt",
+      "description_html": "<p>The overshirt for the in-between months: heavier than a shirt, lighter than a jacket, and fine with a tee under it in April or a sweater in October.</p><h3>Fabric</h3><p>10 oz cotton twill, peached on the inside for a soft hand, cut and sewn in our North Carolina workroom.</p><h3>Fit</h3><p>Relaxed fit, roomy through the body and sleeves, with a straight hem.</p><h3>Care</h3><p>Machine wash cold, tumble dry low. It gets softer every time.</p>",
+      "price": 128,
+      "sale_price": null,
+      "categories": [
+        "overshirts"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Cotton twill",
+        "fit": "Relaxed",
+        "sleeve": "Long sleeve",
+        "collar": "Point",
+        "weight": "10 oz",
+        "made_in": "USA",
+        "care": "Machine wash cold, tumble dry low. It gets softer every time."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Khaki",
+              "price": 0,
+              "color": "#b7a57f"
+            },
+            {
+              "name": "Navy",
+              "price": 0,
+              "color": "#1f2a44"
+            },
+            {
+              "name": "Faded Black",
+              "price": 0,
+              "color": "#363636"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 90,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "wool-overshirt",
+        "canvas-chore-jacket"
+      ],
+      "cross_sells": [
+        {
+          "product": "long-sleeve-tee",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a khaki brushed cotton twill overshirt with two patch chest pockets, a point collar, snap-free plain buttons and long sleeves, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Visible diagonal twill weave.",
+          "alt": "Twill Overshirt in Khaki",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "corduroy-overshirt",
+      "name": "Corduroy Overshirt",
+      "description_html": "<p>8-wale corduroy in a warm tobacco brown, cut as an overshirt with two patch pockets. Sold out for the season; a new run is being cut for January.</p><h3>Fabric</h3><p>11 oz cotton corduroy at 8 wales to the inch: soft, wide ribs that wear in at the elbows like a good pair of cords.</p><h3>Fit</h3><p>Relaxed fit, the same pattern as our Twill Overshirt.</p><h3>Care</h3><p>Machine wash cold, inside out. Tumble dry low and take it out while still a little damp.</p>",
+      "price": 138,
+      "sale_price": null,
+      "categories": [
+        "overshirts"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Corduroy",
+        "fit": "Relaxed",
+        "sleeve": "Long sleeve",
+        "collar": "Point",
+        "weight": "11 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash cold, inside out. Tumble dry low and take it out while still a little damp."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Tobacco",
+              "price": 0,
+              "color": "#7a5432"
+            },
+            {
+              "name": "Navy",
+              "price": 0,
+              "color": "#1f2a44"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 0,
+        "status": "out_of_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "twill-overshirt",
+        "wool-overshirt"
+      ],
+      "cross_sells": [],
+      "images": [
+        {
+          "prompt": "Studio product photo of a tobacco-brown 8-wale cotton corduroy overshirt with two patch chest pockets, a point collar and long sleeves, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Clear vertical corduroy ribs catching the light.",
+          "alt": "Corduroy Overshirt in Tobacco",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "canvas-chore-jacket",
+      "name": "Canvas Chore Jacket",
+      "description_html": "<p>Three pockets, a point collar, and canvas stiff enough to stand up on its own the first week. Wear it hard and it softens into the jacket you reach for every day.</p><h3>Details</h3><ul><li>Three patch pockets plus an inside chest pocket</li><li>Bar-tacked stress points</li><li>Gusseted underarms</li></ul><h3>Fabric</h3><p>12 oz unwashed cotton duck canvas, woven in the Carolinas, with bar-tacked pocket corners.</p><h3>Fit</h3><p>Relaxed fit, boxy and a little short, made to wear over a shirt or a sweater. Take your usual size.</p><h3>Care</h3><p>Machine wash cold, alone the first few times. Hang to dry. Creases and fades are part of the deal.</p>",
+      "price": 178,
+      "sale_price": null,
+      "categories": [
+        "overshirts"
+      ],
+      "tags": [
+        "new"
+      ],
+      "attributes": {
+        "fabric": "Cotton canvas",
+        "fit": "Relaxed",
+        "sleeve": "Long sleeve",
+        "collar": "Point",
+        "weight": "12 oz",
+        "made_in": "USA",
+        "care": "Machine wash cold, alone the first few times. Hang to dry. Creases and fades are part of the deal."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Natural",
+              "price": 0,
+              "color": "#e3d9c3"
+            },
+            {
+              "name": "Navy",
+              "price": 0,
+              "color": "#1f2a44"
+            },
+            {
+              "name": "Brown Duck",
+              "price": 0,
+              "color": "#8a6a45"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 75,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "wool-overshirt",
+        "washed-chambray-shirt"
+      ],
+      "cross_sells": [
+        {
+          "product": "heavyweight-crew-tee",
+          "discount_percent": null
+        },
+        {
+          "product": "six-panel-cap",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of an undyed natural cotton canvas chore jacket with three patch pockets (one on the chest, two at the hips), a point collar, plain metal buttons and long sleeves, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Stiff, dry canvas with visible weave.",
+          "alt": "Canvas Chore Jacket in Natural",
+          "size": "1024x1536"
+        },
+        {
+          "prompt": "An invented person seen from the chest down, face out of frame, wearing a navy canvas chore jacket open over a white heavyweight tee, hands in the jacket's hip pockets, standing against a white seamless wall in soft daylight.",
+          "alt": "Canvas Chore Jacket in Navy, worn open over a white tee",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "brushed-flannel-shirt",
+      "name": "Brushed Flannel Shirt",
+      "description_html": "<p>A flannel you can wear from the first cold morning to the last one. Brushed on both sides, so it is soft against the skin and holds warmth without bulk. Checks matched at the pockets and placket, every time.</p><h3>Details</h3><ul><li>Pattern matched at the pockets, yoke and placket</li><li>Button-flap chest pockets</li><li>Single-button cuffs</li></ul><h3>Fabric</h3><p>6.5 oz yarn-dyed cotton flannel from Portugal, double-brushed.</p><h3>Fit</h3><p>Regular fit, with room to layer a tee under it and a straight hem that works tucked or out.</p><h3>Care</h3><p>Machine wash cold, tumble dry low. Flannel pills less the less you dry it hot.</p>",
+      "price": 98,
+      "sale_price": null,
+      "categories": [
+        "flannels"
+      ],
+      "tags": [
+        "bestseller",
+        "new"
+      ],
+      "attributes": {
+        "fabric": "Brushed flannel",
+        "fit": "Regular",
+        "sleeve": "Long sleeve",
+        "collar": "Point",
+        "weight": "6.5 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash cold, tumble dry low. Flannel pills less the less you dry it hot."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Rust Check",
+              "price": 0,
+              "color": "#a5492f"
+            },
+            {
+              "name": "Pine Check",
+              "price": 0,
+              "color": "#3f5a45"
+            },
+            {
+              "name": "Gray Check",
+              "price": 0,
+              "color": "#8b8d90"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 140,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "heavy-flannel-shirt",
+        "wool-overshirt"
+      ],
+      "cross_sells": [
+        {
+          "product": "long-sleeve-tee",
+          "discount_percent": null
+        },
+        {
+          "product": "crew-socks-three-pack",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a cotton flannel shirt in a rust-red, cream and charcoal check with two button-flap chest pockets, a point collar and long sleeves, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Soft, fuzzy brushed surface.",
+          "alt": "Brushed Flannel Shirt in Rust Check",
+          "size": "1024x1536"
+        },
+        {
+          "prompt": "Overhead studio photo of three neatly folded cotton flannel shirts, stacked slightly offset, in a rust-red check, a pine-green check and a gray check, collars facing up, on a seamless very light gray surface, soft daylight, the brushed fabric texture crisp.",
+          "alt": "Brushed Flannel Shirt folded in Rust Check, Pine Check and Gray Check",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "heavy-flannel-shirt",
+      "name": "Heavy Flannel Shirt",
+      "description_html": "<p>Our thickest flannel, nearly a jacket. When the brushed one isn't enough, this is the one you wear over it.</p><h3>Fabric</h3><p>9 oz heavyweight cotton flannel, brushed to a deep nap on both sides.</p><h3>Fit</h3><p>Relaxed fit, cut generously so it layers over a tee or a thin sweater.</p><h3>Care</h3><p>Machine wash cold, tumble dry low.</p>",
+      "price": 118,
+      "sale_price": null,
+      "categories": [
+        "flannels"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Brushed flannel",
+        "fit": "Relaxed",
+        "sleeve": "Long sleeve",
+        "collar": "Point",
+        "weight": "9 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash cold, tumble dry low."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Navy Plaid",
+              "price": 0,
+              "color": "#2c3550"
+            },
+            {
+              "name": "Red Plaid",
+              "price": 0,
+              "color": "#9c2f2a"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 80,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "brushed-flannel-shirt",
+        "quilted-flannel-shirt-jacket"
+      ],
+      "cross_sells": [
+        {
+          "product": "six-panel-cap",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a heavy, thick cotton flannel shirt in a navy, forest-green and black plaid with two patch chest pockets, a point collar and long sleeves, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Dense, lofty brushed fabric.",
+          "alt": "Heavy Flannel Shirt in Navy Plaid",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "solid-flannel-shirt",
+      "name": "Solid Flannel Shirt",
+      "description_html": "<p>A flannel without the check, for people who want the softness and none of the lumberyard. A button-down collar keeps it neat enough for an office.</p><h3>Fabric</h3><p>6.5 oz heathered cotton flannel, double-brushed.</p><h3>Fit</h3><p>Regular fit, cut on our Classic Oxford pattern.</p><h3>Care</h3><p>Machine wash cold, tumble dry low.</p>",
+      "price": 92,
+      "sale_price": 69,
+      "categories": [
+        "flannels"
+      ],
+      "tags": [
+        "sale"
+      ],
+      "attributes": {
+        "fabric": "Brushed flannel",
+        "fit": "Regular",
+        "sleeve": "Long sleeve",
+        "collar": "Button-down",
+        "weight": "6.5 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash cold, tumble dry low."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Oatmeal",
+              "price": 0,
+              "color": "#d8ccb4"
+            },
+            {
+              "name": "Charcoal",
+              "price": 0,
+              "color": "#3d3e40"
+            },
+            {
+              "name": "Forest",
+              "price": 0,
+              "color": "#3e5243"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 60,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "brushed-flannel-shirt",
+        "classic-oxford"
+      ],
+      "cross_sells": [],
+      "images": [
+        {
+          "prompt": "Studio product photo of a plain solid oatmeal-colored brushed cotton flannel shirt with a soft button-down collar, one chest pocket and long sleeves, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Fine heathered, fuzzy flannel surface.",
+          "alt": "Solid Flannel Shirt in Oatmeal",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "quilted-flannel-shirt-jacket",
+      "name": "Quilted Flannel Shirt Jacket",
+      "description_html": "<p>Our heavy flannel, quilted to a light padded lining. It looks like a shirt and wears like a jacket, down to about 40°F.</p><h3>Fabric</h3><p>9 oz cotton flannel shell, with a quilted lining filled with recycled polyester.</p><h3>Fit</h3><p>Relaxed fit, cut to go over a shirt or tee. Take your usual size.</p><h3>Care</h3><p>Machine wash cold on a gentle cycle. Tumble dry low.</p>",
+      "price": 158,
+      "sale_price": null,
+      "categories": [
+        "flannels",
+        "overshirts"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Brushed flannel",
+        "fit": "Relaxed",
+        "sleeve": "Long sleeve",
+        "collar": "Point",
+        "weight": "9 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash cold on a gentle cycle. Tumble dry low."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Brown Check",
+              "price": 0,
+              "color": "#7a5b45"
+            },
+            {
+              "name": "Gray Check",
+              "price": 0,
+              "color": "#8b8d90"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 50,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "heavy-flannel-shirt",
+        "canvas-chore-jacket"
+      ],
+      "cross_sells": [
+        {
+          "product": "long-sleeve-tee",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a brown and tan check flannel shirt jacket with a lightly quilted lining visible at the open collar, two flap chest pockets and long sleeves, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below.",
+          "alt": "Quilted Flannel Shirt Jacket in Brown Check",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "linen-camp-shirt",
+      "name": "Linen Camp Shirt",
+      "description_html": "<p>An open collar, short sleeves and a straight hem: a shirt for heat. End of season, so it is marked down until the last sizes go.</p><h3>Fabric</h3><p>5 oz garment-washed linen from flax grown in northern France, woven in Portugal.</p><h3>Fit</h3><p>Relaxed fit, wide through the body with sleeves that end just above the elbow.</p><h3>Care</h3><p>Machine wash cold, hang to dry. Never iron it flat; the creases are the point.</p>",
+      "price": 98,
+      "sale_price": 72,
+      "categories": [
+        "linen"
+      ],
+      "tags": [
+        "sale"
+      ],
+      "attributes": {
+        "fabric": "Linen",
+        "fit": "Relaxed",
+        "sleeve": "Short sleeve",
+        "collar": "Camp",
+        "weight": "5 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash cold, hang to dry. Never iron it flat; the creases are the point."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "White",
+              "price": 0,
+              "color": "#f7f7f4"
+            },
+            {
+              "name": "Sand",
+              "price": 0,
+              "color": "#d9c7a6"
+            },
+            {
+              "name": "Faded Blue",
+              "price": 0,
+              "color": "#9fb3c8"
+            },
+            {
+              "name": "Terracotta",
+              "price": 0,
+              "color": "#b56a4c"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 60,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "linen-button-down",
+        "pocket-tee"
+      ],
+      "cross_sells": [
+        {
+          "product": "six-panel-cap",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a short-sleeve sand-colored linen shirt with an open camp collar, a straight hem and one chest pocket, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Natural slubby linen with soft creases.",
+          "alt": "Linen Camp Shirt in Sand",
+          "size": "1024x1536"
+        },
+        {
+          "prompt": "An invented man seen from behind, cropped at the neck, wearing a terracotta short-sleeve linen camp-collar shirt untucked over white trousers, against a white wall washed with soft warm daylight and the faint shadow of a window frame, no face visible.",
+          "alt": "Linen Camp Shirt in Terracotta, worn, seen from behind",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "linen-button-down",
+      "name": "Linen Button-Down",
+      "description_html": "<p>Our Classic Oxford pattern, in linen. Cool enough for August, with a collar that still looks dressed when the rest of you doesn't.</p><h3>Fabric</h3><p>4.5 oz washed linen, woven in Portugal from European flax.</p><h3>Fit</h3><p>Regular fit, the same as the Classic Oxford.</p><h3>Care</h3><p>Machine wash cold, hang to dry.</p>",
+      "price": 108,
+      "sale_price": null,
+      "categories": [
+        "linen"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Linen",
+        "fit": "Regular",
+        "sleeve": "Long sleeve",
+        "collar": "Button-down",
+        "weight": "4.5 oz",
+        "made_in": "Portugal",
+        "care": "Machine wash cold, hang to dry."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "White",
+              "price": 0,
+              "color": "#f7f7f4"
+            },
+            {
+              "name": "Sky",
+              "price": 0,
+              "color": "#c8dbec"
+            },
+            {
+              "name": "Stone",
+              "price": 0,
+              "color": "#cfc6b4"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 60,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "linen-camp-shirt",
+        "classic-oxford"
+      ],
+      "cross_sells": [],
+      "images": [
+        {
+          "prompt": "Studio product photo of a long-sleeve sky-blue linen shirt with a soft button-down collar and one chest pocket, buttoned, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Light, airy linen with visible slub and natural creases.",
+          "alt": "Linen Button-Down in Sky",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "pique-polo",
+      "name": "Piqué Polo",
+      "description_html": "<p>A classic polo with a collar that stands up on its own and doesn't curl. Two buttons, ribbed sleeve bands, a longer back hem.</p><h3>Fabric</h3><p>7 oz Peruvian pima cotton piqué. The collar and cuffs are knitted to shape, not cut from a roll.</p><h3>Fit</h3><p>Regular fit, close but not tight through the chest.</p><h3>Care</h3><p>Machine wash cold, lay flat or hang to dry so the collar keeps its shape.</p>",
+      "price": 68,
+      "sale_price": null,
+      "categories": [
+        "polos-henleys"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Cotton piqué",
+        "fit": "Regular",
+        "sleeve": "Short sleeve",
+        "collar": "Polo",
+        "weight": "7 oz",
+        "made_in": "Peru",
+        "care": "Machine wash cold, lay flat or hang to dry so the collar keeps its shape."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "White",
+              "price": 0,
+              "color": "#f7f7f4"
+            },
+            {
+              "name": "Navy",
+              "price": 0,
+              "color": "#1f2a44"
+            },
+            {
+              "name": "Bottle Green",
+              "price": 0,
+              "color": "#2f4a3a"
+            },
+            {
+              "name": "Bone",
+              "price": 0,
+              "color": "#e9e3d6"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 100,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "knit-polo",
+        "heavyweight-crew-tee"
+      ],
+      "cross_sells": [
+        {
+          "product": "six-panel-cap",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a navy cotton piqué polo shirt with a ribbed collar and a two-button placket, short sleeves with ribbed bands, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Clear honeycomb piqué texture.",
+          "alt": "Piqué Polo in Navy",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "knit-polo",
+      "name": "Knit Polo",
+      "description_html": "<p>A sweater cut like a polo, with an open collar and no buttons. Wear it with tailored trousers and it looks like you tried; with shorts, like you didn't.</p><h3>Fabric</h3><p>9 oz fine-gauge cotton knit, fully fashioned so the seams are knitted together rather than sewn.</p><h3>Fit</h3><p>Regular fit, a touch shorter in the body than our shirts so it sits at the belt.</p><h3>Care</h3><p>Hand wash or machine wash cold on a wool cycle. Dry flat.</p>",
+      "price": 88,
+      "sale_price": null,
+      "categories": [
+        "polos-henleys"
+      ],
+      "tags": [
+        "new"
+      ],
+      "attributes": {
+        "fabric": "Knit cotton",
+        "fit": "Regular",
+        "sleeve": "Short sleeve",
+        "collar": "Polo",
+        "weight": "9 oz",
+        "made_in": "Peru",
+        "care": "Hand wash or machine wash cold on a wool cycle. Dry flat."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Cream",
+              "price": 0,
+              "color": "#efe7d4"
+            },
+            {
+              "name": "Navy",
+              "price": 0,
+              "color": "#1f2a44"
+            },
+            {
+              "name": "Chocolate",
+              "price": 0,
+              "color": "#5a3e2e"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 60,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "pique-polo",
+        "classic-oxford"
+      ],
+      "cross_sells": [],
+      "images": [
+        {
+          "prompt": "Studio product photo of a cream fine-gauge knitted cotton polo shirt with an open, buttonless collar and short sleeves, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Visible fine sweater-knit texture.",
+          "alt": "Knit Polo in Cream",
+          "size": "1024x1536"
+        },
+        {
+          "prompt": "Overhead studio photo of one cream knitted cotton polo, folded neatly with the open collar on top, beside a folded chocolate-brown one, on a seamless very light gray surface, soft daylight, the knit texture crisp.",
+          "alt": "Knit Polo folded in Cream and Chocolate",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "waffle-henley",
+      "name": "Waffle Henley",
+      "description_html": "<p>A long-sleeve henley in a deep waffle knit that traps warmth. Three buttons, ribbed cuffs, and the most comfortable thing we sell.</p><h3>Fabric</h3><p>8 oz cotton waffle knit, knitted and sewn in North Carolina.</p><h3>Fit</h3><p>Regular fit, close enough to wear under a flannel.</p><h3>Care</h3><p>Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%.</p>",
+      "price": 58,
+      "sale_price": null,
+      "categories": [
+        "polos-henleys",
+        "tees"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Waffle knit",
+        "fit": "Regular",
+        "sleeve": "Long sleeve",
+        "collar": "Henley",
+        "weight": "8 oz",
+        "made_in": "USA",
+        "care": "Machine wash cold with like colors, inside out. Tumble dry low or hang to dry. It was washed before cutting, so it shrinks less than 3%."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Oatmeal",
+              "price": 0,
+              "color": "#d8ccb4"
+            },
+            {
+              "name": "Charcoal",
+              "price": 0,
+              "color": "#3d3e40"
+            },
+            {
+              "name": "Rust",
+              "price": 0,
+              "color": "#a5532f"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "XS",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "S",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XL",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "XXL",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 90,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "long-sleeve-tee",
+        "brushed-flannel-shirt"
+      ],
+      "cross_sells": [
+        {
+          "product": "crew-socks-three-pack",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of an oatmeal waffle-knit cotton henley with a three-button placket and long sleeves, shown front-on as if worn by an invisible form (no mannequin, no person, no hanger visible), centered on a seamless very light gray studio background with wide empty space around it, soft daylight from the left, a faint soft shadow below. Clear square waffle texture.",
+          "alt": "Waffle Henley in Oatmeal",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "six-panel-cap",
+      "name": "Six-Panel Cap",
+      "description_html": "<p>A plain cap in washed cotton twill, with no logo on the front. A cloth strap and a brass slide at the back.</p><h3>Fabric</h3><p>Washed 8 oz cotton twill with a cotton sweatband.</p><h3>Fit</h3><p>One size, adjustable at the back from 21.5 to 23.5 in.</p><h3>Care</h3><p>Spot clean with a damp cloth. Don't put it in the machine.</p>",
+      "price": 36,
+      "sale_price": null,
+      "categories": [
+        "caps-socks"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Cotton twill",
+        "made_in": "USA",
+        "care": "Spot clean with a damp cloth. Don't put it in the machine."
+      },
+      "options": [
+        {
+          "name": "Color",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "Navy",
+              "price": 0,
+              "color": "#1f2a44"
+            },
+            {
+              "name": "Stone",
+              "price": 0,
+              "color": "#cfc6b4"
+            },
+            {
+              "name": "Olive",
+              "price": 0,
+              "color": "#5f6146"
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 90,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "crew-socks-three-pack"
+      ],
+      "cross_sells": [
+        {
+          "product": "heavyweight-crew-tee",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Studio product photo of a plain navy six-panel cotton twill baseball cap with a curved brim and a cloth strap at the back, completely blank with no embroidery or logo, seen from a three-quarter front angle, alone on a seamless very light gray background, soft daylight, a soft shadow.",
+          "alt": "Six-Panel Cap in Navy",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    },
+    {
+      "slug": "crew-socks-three-pack",
+      "name": "Ribbed Crew Socks, 3 Pairs",
+      "description_html": "<p>Three pairs of ribbed crew socks, one each in oatmeal, gray and navy. Cushioned under the foot, with a heel that stays at the heel. M fits US men's 6 to 9, L fits 9 to 13.</p><h3>Fabric</h3><p>78% combed cotton, 20% nylon, 2% elastane, knitted in North Carolina.</p><h3>Fit</h3><p>M: US men's 6 to 9 (women's 7 to 10). L: US men's 9 to 13.</p><h3>Care</h3><p>Machine wash warm, tumble dry low.</p>",
+      "price": 28,
+      "sale_price": null,
+      "categories": [
+        "caps-socks"
+      ],
+      "tags": [],
+      "attributes": {
+        "fabric": "Cotton-blend rib",
+        "made_in": "USA",
+        "care": "Machine wash warm, tumble dry low."
+      },
+      "options": [
+        {
+          "name": "Size",
+          "variant": true,
+          "required": true,
+          "input_type": "select",
+          "values": [
+            {
+              "name": "M",
+              "price": 0,
+              "color": null
+            },
+            {
+              "name": "L",
+              "price": 0,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "stock": {
+        "tracking": true,
+        "level": 120,
+        "status": "in_stock"
+      },
+      "subscription_plans": [],
+      "quantity": {
+        "min": 1,
+        "inc": 1
+      },
+      "tiers": [],
+      "bundle_items": [],
+      "up_sells": [
+        "six-panel-cap"
+      ],
+      "cross_sells": [
+        {
+          "product": "heavyweight-crew-tee",
+          "discount_percent": null
+        }
+      ],
+      "images": [
+        {
+          "prompt": "Overhead studio photo of three pairs of plain ribbed cotton crew socks, folded flat and laid side by side, in oatmeal, heather gray and navy, on a seamless very light gray background, soft daylight, no labels or bands.",
+          "alt": "Ribbed Crew Socks in oatmeal, heather gray and navy",
+          "size": "1024x1536"
+        }
+      ],
+      "theme_template": null
+    }
+  ],
+  "pages": [
+    {
+      "slug": "about",
+      "title": "About Cuffwell",
+      "template": "about",
+      "content_html": "<p>Cuffwell makes shirts. Tees, oxfords, flannels, overshirts and linen, plus a cap and some socks because we kept being asked. About two dozen things, made properly, and kept in stock for years rather than seasons.</p><h2>Why shirts</h2><p>June Ashcombe spent twelve years cutting shirt patterns for other labels and watching the good parts get cut out to meet a price: the collar interlining went first, then the second cuff button, then the extra inch of hem. In 2019 she rented the ground floor of an old hosiery mill in Hollis Mill, North Carolina, bought one cutting table and two machines, and started making the shirt she couldn't buy.</p><h2>How they're made</h2><p>Every pattern is cut in our workroom. Tees, twill and canvas are sewn there too, by a team of eleven. Oxfords, flannels and linen come from two family workshops in northern Portugal that we visit twice a year; polos and knits from a knitting mill in Peru; chambray from shuttle looms in Japan. We name every one of them on the product pages.</p><h2>What we promise</h2><p>Collars that roll, cuffs that hold, and seams guaranteed for two years. If one fails, we repair the shirt, replace it or refund it. Your choice, no forms.</p>"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "template": "contact",
+      "content_html": "<p>A real person answers every email, usually within one business day. For a size question, tell us your chest measurement and the shirt you have in mind, and we'll tell you what we'd wear.</p>"
+    },
+    {
+      "slug": "shipping-returns",
+      "title": "Shipping & returns",
+      "template": null,
+      "content_html": "<h2>Shipping</h2><p>We ship to the United States and Canada from our workroom in Hollis Mill, North Carolina. Orders leave within two business days, folded in tissue in a recycled box.</p><ul><li>Standard shipping: $8, free on orders over $150.</li><li>US: usually 3–5 business days.</li><li>Canada: usually 5–9 business days. Duties and taxes may be due on delivery.</li><li>Tee subscriptions always ship free.</li></ul><h2>Returns</h2><p>Return anything unworn and unwashed, tags on, within 30 days of delivery for a full refund. Sale items: within 14 days.</p><ul><li>US returns are free. Email hello@cuffwell.example with your order number and we'll send a prepaid label.</li><li>From Canada, return shipping is $12, taken from your refund.</li><li>Refunds go to your original payment method within 5 business days of the return reaching us.</li></ul><h2>Exchanges</h2><p>Free, in both countries. We send the new size as soon as your return is scanned by the carrier, so you aren't waiting a week without a shirt.</p><h2>Two-year seam guarantee</h2><p>If a seam fails within two years, send us a photo. We'll repair it, replace the shirt or refund it.</p>"
+    },
+    {
+      "slug": "fit-guide",
+      "title": "Fit guide",
+      "template": null,
+      "content_html": "<p>Our shirts come in three fits, and every product page says which one it is. Measure a shirt you already like, lay it flat, and compare it with the chest measurements below.</p><h2>The three fits</h2><ul><li><strong>Slim:</strong> close through the chest and waist, for wearing under a jacket. Only our Spread Collar Poplin Shirt.</li><li><strong>Regular:</strong> room through the chest, a gentle taper, a hem that stays tucked. Most of our shirts and tees.</li><li><strong>Relaxed:</strong> a full size roomier, cut to layer. Overshirts, jackets and heavy flannels.</li></ul><p>The Slub Tee is <strong>Boxy</strong>: wide and short, made to be worn untucked.</p><h2>Chest, measured flat across, in inches</h2><table><thead><tr><th>Size</th><th>Your chest</th><th>Slim shirt</th><th>Regular shirt</th><th>Relaxed overshirt</th></tr></thead><tbody><tr><td>XS</td><td>33–35</td><td>19</td><td>20</td><td>21.5</td></tr><tr><td>S</td><td>35–37</td><td>20</td><td>21</td><td>22.5</td></tr><tr><td>M</td><td>38–40</td><td>21.25</td><td>22.25</td><td>23.75</td></tr><tr><td>L</td><td>41–43</td><td>22.5</td><td>23.5</td><td>25</td></tr><tr><td>XL</td><td>44–46</td><td>24</td><td>25</td><td>26.5</td></tr><tr><td>XXL</td><td>47–49</td><td>25.5</td><td>26.5</td><td>28</td></tr></tbody></table><h2>Sleeves</h2><p>Our long sleeves are cut to end at the base of your thumb with the cuff buttoned. Every shirt has two cuff buttons, so you can take it in half an inch at the wrist.</p><h2>Between sizes?</h2><p>Go down in Regular and Relaxed fits, up in Slim. Or email hello@cuffwell.example with your chest measurement and the shirt you want, and we'll tell you.</p>"
+    }
+  ],
+  "blog": {
+    "slug": "journal",
+    "title": "Journal",
+    "posts": [
+      {
+        "slug": "how-to-roll-a-sleeve",
+        "title": "How to roll a sleeve properly",
+        "date": "2026-10-02",
+        "tags": [
+          "how-to"
+        ],
+        "content_html": "<p>There are two good ways to roll a shirt sleeve, and the one most people use isn't either of them. Here is how we do it in the workroom, where sleeves get rolled a hundred times a day.</p><h2>The quick roll</h2><p>Unbutton the cuff and the sleeve placket. Fold the cuff back once, so its inside faces out. Fold again, the same width, so the cuff disappears inside a neat band. Stop below the elbow. That's it: two folds, flat, the same width as the cuff.</p><h2>The workroom roll</h2><p>For heat, or for work. Unbutton the cuff and pull the sleeve up past the elbow, inside out, until the bottom of the cuff sits just below the elbow. Then fold the bottom up once, so it covers all but the top edge of the cuff. The cuff peeks out above a clean band, and it stays put all day.</p><h2>What not to do</h2><p>Don't roll a thin, tight tube up past the elbow. It cuts off circulation and creases the sleeve in twenty places. Don't roll a button-down with the cuff still buttoned. And don't roll the poplin; it's for the days you keep your sleeves down.</p><h2>Which shirts roll best</h2><p>Oxford cloth and chambray hold a roll all day. Linen holds it with a few creases. Flannel is too thick for anything but the quick roll.</p>",
+        "image": {
+          "prompt": "Close studio photo of an invented person's forearm and hand, cropped tight, wearing a white oxford cloth shirt with the sleeve rolled in a neat band just below the elbow, the forearm resting on a pale oak table beside a folded pale blue shirt, soft daylight from the left, white wall behind. No face.",
+          "size": "1536x1024"
+        }
+      },
+      {
+        "slug": "inside-the-cutting-room",
+        "title": "Inside the cutting room",
+        "date": "2026-10-20",
+        "tags": [
+          "workroom"
+        ],
+        "content_html": "<p>Every Cuffwell shirt starts on one table: thirty feet of maple in the old hosiery mill on Spindle Street. Here is what happens on it.</p><h2>Laying up</h2><p>Cloth is laid in layers, up to forty deep, with the grain checked at both ends. Stripes and checks are pinned at every layer so the pattern lines up from the collar to the pockets. A check that doesn't match at the placket is the first thing we'd notice, so we make sure you never do.</p><h2>Cutting</h2><p>A shirt is fourteen to twenty-two pieces, depending on the pockets. We cut collars and cuffs by hand with shears, a few at a time, because they're the parts people look at. The body pieces go under a straight knife.</p><h2>Bundling</h2><p>Each shirt's pieces are tied into one bundle with its size, color and lot written on a paper ticket, and sent to the sewing room, ours or one of our workshops in Portugal. When the shirt comes back, it's checked against the same ticket: collar points within an eighth of an inch, stripes matched, every buttonhole clean.</p><h2>What's on the table this month</h2><p>The January run of the Corduroy Overshirt, in tobacco and navy. Sizes that sold out will be back first.</p>",
+        "image": {
+          "prompt": "A long pale maple cutting table seen in perspective in a bright old mill room with tall windows and white-painted brick walls: layers of rust and green checked flannel cloth laid flat, brown paper pattern pieces and steel weights on top, heavy shears and a wooden yardstick, soft daylight. No people.",
+          "size": "1536x1024"
+        }
+      },
+      {
+        "slug": "flannel-explained",
+        "title": "Flannel, explained",
+        "date": "2026-11-06",
+        "tags": [
+          "fabric"
+        ],
+        "content_html": "<p>Flannel isn't a pattern. A lot of people think it means a plaid shirt, but flannel is a finish: cloth brushed with fine wire rollers until the fibers lift into a soft, fuzzy nap. That nap traps air, which is why flannel is warm without being thick.</p><h2>Single or double brushed</h2><p>Cheap flannel is brushed on the outside only, so it looks soft and feels like a dishcloth against your skin. Ours is brushed on both sides. It costs more and takes longer, and it's the whole difference.</p><h2>Three weights</h2><ul><li><strong>6.5 oz, our Brushed and Solid flannels:</strong> a shirt, from October to March.</li><li><strong>9 oz, our Heavy Flannel:</strong> nearly a jacket. Wear it over a tee.</li><li><strong>9 oz quilted, our Shirt Jacket:</strong> a jacket that looks like a shirt, good to about 40°F.</li></ul><h2>Keeping it soft</h2><p>Heat is what makes flannel pill and shrink. Wash it cold, dry it low or hang it, and it'll be softer in five years than it is today.</p>",
+        "image": {
+          "prompt": "Overhead studio photo of three folded cotton flannel shirts fanned out side by side, in a rust check, a pine-green check and a navy plaid, collars at the top, on a seamless very light gray surface, soft raking daylight from the left showing the brushed, fuzzy nap of the cloth, wide empty space around them.",
+          "size": "1536x1024"
+        }
+      }
+    ]
+  },
+  "menus": {
+    "main_menu": [
+      {
+        "name": "Shop",
+        "type": "url",
+        "value": "/products",
+        "items": [
+          {
+            "name": "Shop all",
+            "type": "url",
+            "value": "/products",
+            "items": []
+          },
+          {
+            "name": "Tees",
+            "type": "category",
+            "value": "tees",
+            "items": []
+          },
+          {
+            "name": "Oxfords & button-downs",
+            "type": "category",
+            "value": "oxfords",
+            "items": []
+          },
+          {
+            "name": "Overshirts & jackets",
+            "type": "category",
+            "value": "overshirts",
+            "items": []
+          },
+          {
+            "name": "Flannels",
+            "type": "category",
+            "value": "flannels",
+            "items": []
+          },
+          {
+            "name": "Linen",
+            "type": "category",
+            "value": "linen",
+            "items": []
+          },
+          {
+            "name": "Polos & henleys",
+            "type": "category",
+            "value": "polos-henleys",
+            "items": []
+          },
+          {
+            "name": "Caps & socks",
+            "type": "category",
+            "value": "caps-socks",
+            "items": []
+          }
+        ]
+      },
+      {
+        "name": "Flannels",
+        "type": "category",
+        "value": "flannels",
+        "items": []
+      },
+      {
+        "name": "Oxfords",
+        "type": "category",
+        "value": "oxfords",
+        "items": []
+      },
+      {
+        "name": "Overshirts",
+        "type": "category",
+        "value": "overshirts",
+        "items": []
+      },
+      {
+        "name": "Fit guide",
+        "type": "page",
+        "value": "fit-guide",
+        "items": []
+      },
+      {
+        "name": "Journal",
+        "type": "blog",
+        "value": "journal",
+        "items": []
+      },
+      {
+        "name": "About",
+        "type": "page",
+        "value": "about",
+        "items": []
+      }
+    ],
+    "footer_menu": [
+      {
+        "name": "Shop",
+        "type": "heading",
+        "items": [
+          {
+            "name": "Tees",
+            "type": "category",
+            "value": "tees",
+            "items": []
+          },
+          {
+            "name": "Oxfords & button-downs",
+            "type": "category",
+            "value": "oxfords",
+            "items": []
+          },
+          {
+            "name": "Overshirts & jackets",
+            "type": "category",
+            "value": "overshirts",
+            "items": []
+          },
+          {
+            "name": "Flannels",
+            "type": "category",
+            "value": "flannels",
+            "items": []
+          },
+          {
+            "name": "Linen",
+            "type": "category",
+            "value": "linen",
+            "items": []
+          },
+          {
+            "name": "Polos & henleys",
+            "type": "category",
+            "value": "polos-henleys",
+            "items": []
+          }
+        ]
+      },
+      {
+        "name": "Help",
+        "type": "heading",
+        "items": [
+          {
+            "name": "Shipping & returns",
+            "type": "page",
+            "value": "shipping-returns",
+            "items": []
+          },
+          {
+            "name": "Fit guide",
+            "type": "page",
+            "value": "fit-guide",
+            "items": []
+          },
+          {
+            "name": "Contact",
+            "type": "page",
+            "value": "contact",
+            "items": []
+          },
+          {
+            "name": "Refund policy",
+            "type": "url",
+            "value": "/policies/refund",
+            "items": []
+          }
+        ]
+      },
+      {
+        "name": "Cuffwell",
+        "type": "heading",
+        "items": [
+          {
+            "name": "About",
+            "type": "page",
+            "value": "about",
+            "items": []
+          },
+          {
+            "name": "Journal",
+            "type": "blog",
+            "value": "journal",
+            "items": []
+          },
+          {
+            "name": "Privacy",
+            "type": "url",
+            "value": "/policies/privacy",
+            "items": []
+          },
+          {
+            "name": "Terms",
+            "type": "url",
+            "value": "/policies/terms",
+            "items": []
+          }
+        ]
+      }
+    ]
+  },
+  "home_images": [
+    {
+      "key": "hero",
+      "size": "1536x1024",
+      "use": "home > hero > image (boxed layout, words on the left, the photo on the right at about 1.2:1, so keep the subject centered)",
+      "prompt": "An invented man seen from the chin down, face out of frame, standing against a plain white studio wall in soft side daylight, wearing a pale blue oxford button-down shirt with the sleeves rolled twice to the forearm, tucked into stone-colored cotton trousers, one hand resting in his pocket, a charcoal wool overshirt folded over the other forearm. The figure is centered with white wall on both sides; the shirt's collar roll, rolled cuffs and oxford weave are crisp.",
+      "alt": "A pale blue oxford shirt with rolled sleeves, worn with stone trousers, a charcoal wool overshirt over one arm"
+    },
+    {
+      "key": "workroom",
+      "size": "1024x1024",
+      "use": "page.about > story > image (the cutting room, about square)",
+      "prompt": "The cutting room of a small shirt workroom in an old mill: a long pale wooden cutting table under tall windows with soft daylight, a roll of pale blue oxford cloth partly unrolled, brown paper shirt pattern pieces laid on it with a few steel weights and a pair of heavy tailor's shears, a tape measure; plain white-painted brick walls behind. No people. Calm, orderly and bright.",
+      "alt": "Our cutting table in Hollis Mill, with oxford cloth, paper patterns and shears"
+    }
+  ],
+  "section_content": [
+    {
+      "groups": [
+        "header"
+      ],
+      "sections": {
+        "announcement": {
+          "text": "Free shipping over $150 to the US and Canada. Free US returns.",
+          "link_label": "Shipping & returns",
+          "link_href": "/pages/shipping-returns"
+        }
+      }
+    },
+    {
+      "groups": [
+        "footer"
+      ],
+      "sections": {
+        "footer": {
+          "tagline": "Shirts, made properly. Cut in Hollis Mill, North Carolina, since 2019.",
+          "note": "Workroom shop at 214 Spindle Street, Thursday to Saturday, 10 to 6."
+        }
+      }
+    },
+    {
+      "templates": [
+        "home"
+      ],
+      "sections": {
+        "hero": {
+          "eyebrow": "Fall 2026: flannels and overshirts",
+          "title": "Shirts first. The rest can wait.",
+          "title_size": "large",
+          "subtitle": "Oxfords, flannels, tees and linen, cut in our North Carolina workroom and sewn to hold a collar for years.",
+          "cta_label": "Shop shirts",
+          "cta_href": "/products",
+          "secondary_label": "Find your fit",
+          "secondary_href": "/pages/fit-guide",
+          "image": {
+            "$image": "hero"
+          },
+          "align": "left",
+          "layout": "boxed",
+          "artwork": "none"
+        },
+        "best-sellers": {
+          "eyebrow": "Best sellers",
+          "heading": "The shirts people buy twice",
+          "link_label": "Shop all",
+          "link_href": "/products",
+          "card": "both",
+          "products": {
+            "from": "products",
+            "products": [
+              "classic-oxford",
+              "heavyweight-crew-tee",
+              "brushed-flannel-shirt",
+              "wool-overshirt",
+              "canvas-chore-jacket",
+              "linen-camp-shirt",
+              "knit-polo",
+              "corduroy-overshirt"
+            ]
+          }
+        },
+        "trips": {
+          "eyebrow": "Shop by shirt",
+          "heading": "Pick a cloth",
+          "link_label": "All categories",
+          "link_href": "/categories",
+          "collections": {
+            "from": "collections",
+            "collections": [
+              "oxfords",
+              "flannels",
+              "overshirts"
+            ]
+          }
+        },
+        "newsletter": {
+          "heading": "One email a month",
+          "text": "New fabrics, restocks of sold-out sizes, and a note from the cutting room. No countdown timers.",
+          "button_label": "Sign up",
+          "note": "Unsubscribe in one click."
+        }
+      }
+    },
+    {
+      "templates": [
+        "page.about"
+      ],
+      "sections": {
+        "story": {
+          "eyebrow": "The workroom",
+          "heading": "Every pattern starts on one table",
+          "body": "Our cutting table is thirty feet of maple on the ground floor of an old hosiery mill. Every Cuffwell pattern is drawn, graded and cut there, and every shirt is checked against it when it comes back from the sewing room.\n\nCollar points within an eighth of an inch. Stripes matched at the placket. Two buttons on every cuff. If it isn't right, it doesn't ship.",
+          "quote": "A good shirt is a hundred small decisions nobody notices. A bad one is the one they do.",
+          "quote_author": "June Ashcombe, founder",
+          "link_label": "Read the journal",
+          "link_href": "/blogs/journal",
+          "image": {
+            "$image": "workroom"
+          },
+          "layout": "left",
+          "tone": "sand"
+        },
+        "products": {
+          "heading": "Where to start",
+          "card": "swap",
+          "products": {
+            "from": "products",
+            "products": [
+              "classic-oxford",
+              "heavyweight-crew-tee",
+              "brushed-flannel-shirt",
+              "wool-overshirt"
+            ]
+          }
+        },
+        "newsletter": {
+          "heading": "One email a month",
+          "text": "New fabrics, restocks of sold-out sizes, and a note from the cutting room. No countdown timers.",
+          "button_label": "Sign up",
+          "note": "Unsubscribe in one click."
+        }
+      }
+    },
+    {
+      "templates": [
+        "page.contact"
+      ],
+      "sections": {
+        "contact": {
+          "eyebrow": "Contact",
+          "heading": "Talk to a person",
+          "intro": "Orders, sizes, a seam that let you down: write or call and someone from the workroom will answer.",
+          "address": "Cuffwell\n214 Spindle Street\nHollis Mill, NC 28799",
+          "hours": "Workroom shop: Thursday – Saturday, 10am – 6pm\nEmail and phone: Monday – Friday, 9am – 5pm ET"
+        },
+        "newsletter": {
+          "heading": "One email a month",
+          "text": "New fabrics, restocks of sold-out sizes, and a note from the cutting room. No countdown timers.",
+          "button_label": "Sign up",
+          "note": "Unsubscribe in one click."
+        }
+      }
+    },
+    {
+      "templates": [
+        "product"
+      ],
+      "sections": {
+        "details": {
+          "points": [
+            {
+              "icon": "truck",
+              "text": "Free shipping over $150 to the US and Canada"
+            },
+            {
+              "icon": "return",
+              "text": "Free US returns and exchanges within 30 days"
+            },
+            {
+              "icon": "shield",
+              "text": "Seams guaranteed for two years"
+            }
+          ],
+          "details": [
+            {
+              "title": "Shipping & returns",
+              "body": "Ships from Hollis Mill, North Carolina, within two business days. $8, or free over $150. Return it unworn within 30 days; exchanges ship as soon as your return is scanned."
+            },
+            {
+              "title": "Not sure of your size?",
+              "body": "Every product says its fit: Slim, Regular, Relaxed or Boxy. Our fit guide has chest measurements for each, or email hello@cuffwell.example with yours and we'll tell you what we'd wear."
+            }
+          ]
+        },
+        "related": {
+          "heading": "Wear it with",
+          "card": "swap"
+        }
+      }
+    },
+    {
+      "templates": [
+        "collection"
+      ],
+      "sections": {
+        "products": {
+          "card": "both"
+        }
+      }
+    }
+  ],
+  "theme_settings": {
+    "card_swatches": 4
+  },
+  "theme_settings_notes": "Section settings are in section_content (groups header and footer; templates home, page.about, page.contact, product, collection). theme_settings turns on 4 color dots on product cards, since every shirt has color swatches. What has no field: 1) STORE SETTINGS: support email hello@cuffwell.example and phone (828) 555-0162 (the contact page's details read them). 2) PRODUCTS: three-tee-pack is a bundle of 3 heavyweight-crew-tee (shoppers pick size and color per tee); heavyweight-crew-tee has an every-3-months plan with one-time purchase kept on. Sold out: corduroy-overshirt (whole product), heavyweight-crew-tee Bone/XS and classic-oxford Blue/S (variants). On sale: slub-tee, solid-flannel-shirt, linen-camp-shirt. 3) The color attribute is a hidden filter (color families); swatches come from the Color options' hex values. 4) The founder June Ashcombe, the town of Hollis Mill and its address, and every workshop are invented for the demo."
+}

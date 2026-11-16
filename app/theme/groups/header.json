@@ -1,0 +1,18 @@
+{
+  "type": "header",
+  "name": "Header",
+  "sections": [
+    {
+      "id": "announcement",
+      "type": "announcement",
+      "props": {}
+    },
+    {
+      "id": "header",
+      "type": "header",
+      "props": {
+        "menu": "main_menu"
+      }
+    }
+  ]
+}

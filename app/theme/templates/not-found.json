@@ -1,0 +1,24 @@
+{
+  "title": "Page not found",
+  "sections": [
+    {
+      "id": "not-found",
+      "type": "not_found",
+      "props": {}
+    },
+    {
+      "id": "popular",
+      "type": "product_grid",
+      "props": {
+        "heading": "Popular right now",
+        "link_label": "View all",
+        "link_href": "/products",
+        "products": {
+          "from": "all",
+          "sort": "best_selling",
+          "limit": 4
+        }
+      }
+    }
+  ]
+}
