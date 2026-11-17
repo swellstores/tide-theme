@@ -88,4 +88,4 @@ Tide is published.
 
 ## License
 
-Tide is licensed under the Swell Theme License (`LICENSE`), which covers this repository, the shared theme core in `app/` included.
+Tide is licensed under the Swell App License (`LICENSE`), which covers this repository, the shared theme core in `app/` included.
