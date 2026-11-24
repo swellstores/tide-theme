@@ -46,7 +46,7 @@ function StoreCard({ collection: c, level }: { collection: CollectionData; level
         {c.image ? (
           <Image image={c.image} alt="" sizes="(max-width: 560px) calc(100vw - 48px), (max-width: 900px) calc(50vw - 40px), (max-width: 1200px) calc(33.33vw - 53px), 347px" />
         ) : (
-          <span style={{ display: 'inline-grid', color: 'var(--uk-color-text-subtle)' }}><Icon name="bag" size={56} /></span>
+          <span className='uk-media-icon' style={{ display: 'inline-grid', color: 'var(--uk-color-text-subtle)' }}><Icon name="bag" size={56} /></span>
         )}
       </div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginTop: 18 }}>

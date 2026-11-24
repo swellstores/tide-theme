@@ -67,11 +67,14 @@ type Props = {
 // The page's own list (a collection's, which has sort options) gets a bar with its count and sort, its filters behind a
 // Filter disclosure (closed even while filters are chosen, so a filtered page opens at its products; the chosen filters'
 // removal links show below it), the no-results text when the chosen filters match nothing, and its page links; with no
-// products at all, only its no-products text. Another list shows nothing without products or cards.
+// products at all, only its no-products text. Another list shows nothing without products or cards. A grid with a link
+// but no heading or eyebrow of its own (2026-11-23 usability test: a build that emptied the theme's words left a lone
+// "Shop all") is headed by the Store text's: "You may also like" on a product page, "Popular right now" elsewhere.
 export default function ProductGrid(p: Props) {
   const { t } = p;
   const anchor = useId();
-  const { eyebrow, heading, link_label, link_href, columns = '4', tone = 'page', blocks } = p;
+  const { eyebrow, link_label, link_href, columns = '4', tone = 'page', blocks } = p;
+  const heading = p.heading || (link_label && !eyebrow ? t(p.site?.page.kind === 'product' ? 'product.related' : 'collection.popular') : '');
   const list = p.products && typeof p.products === 'object' ? p.products : null;
   const items = Array.isArray(list?.items) ? list.items : [];
   const main = !!list && Array.isArray(list.sort_options) && list.sort_options.length > 0;

@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { CartLink, Container, Icon, NavMenu, Notice, sectionColours } from 'ui-kit';
+import { CartLink, Container, Icon, LocalizationMenu, NavMenu, Notice, sectionColours } from 'ui-kit';
 import type { MenuData, SiteInfo, Translate } from 'ui-kit';
 
 export const schema = {
@@ -8,6 +8,9 @@ export const schema = {
     { id: 'menu', type: 'menu', label: 'Menu', default: 'main_menu' },
     { id: 'layout', type: 'select', label: 'Layout', options: ['left', 'centered'], default: 'left' },
     { id: 'over_hero', type: 'select', label: 'Over the home page\'s first section (a full-width hero image)', options: ['no', 'yes'], default: 'no' },
+    // the shopper's language and currency switcher, here too (the footer always has it); shown only to stores with two or
+    // more languages or currencies
+    { id: 'localization', type: 'select', label: 'Language and currency switcher', options: ['hide', 'show'], default: 'hide' },
     { id: 'menu_label', type: 'text', label: 'Menu button label', retired: true },
     { id: 'search_label', type: 'text', label: 'Search label', retired: true },
     { id: 'account_label', type: 'text', label: 'Account label', retired: true },
@@ -25,7 +28,7 @@ export const schema = {
 
 type Props = {
   t: Translate;
-  menu?: MenuData | null; layout?: string; over_hero?: string; background_colour?: string; text_colour?: string; accent_colour?: string;  site?: SiteInfo; blocks: ReactElement[];
+  menu?: MenuData | null; layout?: string; over_hero?: string; localization?: string; background_colour?: string; text_colour?: string; accent_colour?: string;  site?: SiteInfo; blocks: ReactElement[];
 };
 
 // A text's width at 16 px, generously: 16 px a CJK or other full-width character, 20 an emoji, 10.5 a capital, 8 any
@@ -37,20 +40,27 @@ const textWidth = (s: string) =>
 
 // Whether the menu's links fit on the header's row beside the logo, the search box, the account link and the cart, as
 // a ui-kit fold class: '' (they fit from 901 px wide; the menu button below), uk-fold-lg (they fit from 1200 px; the
-// menu button below) or uk-fold-all (they never fit; the menu button at every width). The widths are generous
-// estimates: each link's text (textWidth) with ui-kit's 32 px between links and 22 px for a dropdown's chevron, 100 px a
-// stored link, the store's name at 1.7 times its textWidth (26 px type), the logo's width (its most, 240 px, when its
-// size is unknown), the search box at its narrowest at 901 px (120 px) and widest from 1200 px (240 px; the row stops
-// growing at the container's 1200 px, so that is its tightest wide case, at 1920 px and over), the container's gutters
-// and the row's gaps.
-function foldOf(menu: MenuData | null | undefined, links: number, logo: number, account: boolean, cart: string) {
+// menu button below) or uk-fold-all (they never fit; the menu button at every width), and the search box's widest (box,
+// px). The widths are generous estimates: each link's text (textWidth) with ui-kit's 32 px between links and 22 px for a
+// dropdown's chevron, 100 px a stored link, the store's name at 1.7 times its textWidth (26 px type), the logo's width
+// (its most, 240 px, when its size is unknown), the search box at its narrowest at 901 px (120 px), the container's
+// gutters and the row's gaps. From 1200 px the row stops growing (the container's 1200 px) while the box grows with the
+// window (14vw), so the links get the row from 1200 px when they fit beside the box at its narrowest, and the box then
+// stops at what they leave it less 32 px (at most 240 px), never pushing them behind the menu button on a wide screen
+// (2026-11-23 usability test: five short links folded at 1440 px, counted beside a 240 px box).
+// The cart's count beside its label once the cart has a line (ui-kit .uk-cart-link [data-site-slot]: at least 20 px and
+// its gap; 2026-11-23 usability test: at 1568 px the count pushed the store's name onto two lines and the last link onto a
+// second row), counted whether or not it shows, so adding to the cart never changes the row.
+const COUNT = 30;
+function foldOf(menu: MenuData | null | undefined, links: number, logo: number, account: boolean, cart: string): { fold: string; box: number } {
   const items = (menu?.items ?? []).filter((i) => i && typeof i.name === 'string');
   const n = items.length + links;
-  if (!n) return '';
+  if (!n) return { fold: '', box: 240 };
   const nav = items.reduce((w, i) => w + textWidth(i.name) + (i.items?.length ? 22 : 0), 0) + links * 100 + 32 * (n - 1);
-  const icons = 40 + (account ? 40 : 0) + 64 + textWidth(cart) * 0.95 + 12; // search button, account, cart, gaps
-  if (nav <= 901 - 96 - 54 - (120 + icons) - logo) return '';
-  return nav <= 1200 - 96 - 88 - (240 + icons) - logo ? 'uk-fold-lg' : 'uk-fold-all';
+  const icons = 40 + (account ? 40 : 0) + 64 + textWidth(cart) * 0.95 + 12 + COUNT; // search button, account, cart, gaps, the cart's count
+  if (nav <= 901 - 96 - 54 - (120 + icons) - logo) return { fold: '', box: 240 };
+  const box = Math.floor(1200 - 96 - 88 - icons - logo - nav) - 32; // 32 px to spare: the estimates run close for short Latin names
+  return box >= 120 ? { fold: 'uk-fold-lg', box: Math.min(box, 240) } : { fold: 'uk-fold-all', box: 240 };
 }
 
 // The logo (the theme settings' image, else the store's name) links home, at least min(96px, 30vw) wide (it gives way
@@ -61,7 +71,8 @@ function foldOf(menu: MenuData | null | undefined, links: number, logo: number, 
 // page holds for it while it loads (its width and height attributes and aspect-ratio, its height from its width); one of
 // unknown size is 40 px tall, or at most its set width wide, its box its own shape once loaded; either way it is
 // contained (never stretched) at the box's left. The menu is the store's (Swell's menu editor): on one row while it fits, else behind the menu button
-// (foldOf); the search box narrows at mid widths and hides under 900px (the search button then opens the search page).
+// (foldOf); the search box narrows at mid widths (and stops where the links need the room: foldOf) and hides under 900px
+// (the search button then opens the search page).
 // #main-content, after the header and before a failed action's notice (the page's ?notice=), is where the platform's
 // skip link goes. The header stays stuck to the top of the window while the page scrolls, unless a theme's settings
 // turn sticky_header off (site.theme_settings; without it, on). The platform wraps the section in its own element, as tall
@@ -76,13 +87,16 @@ function foldOf(menu: MenuData | null | undefined, links: number, logo: number, 
 // the header comes in the page: so under the header group's announcement bar when there is one (the bar stays in view,
 // the header over the top of the first section below it) and at the top of the page without one. The editor's frames
 // already place every section from its wrapper, so the canvas and the site agree.
+// From 901 px wide the logo keeps its width and each link its one line: when the row runs short (a long cart label, a
+// translated link), the search box narrows first, to 72 px.
 export const styles = `
 &:has(.uk-header-sticky) { position: sticky; top: 0; z-index: 50; }
 &:has(.header-over) { position: relative; }
 &:has(.uk-header-sticky) [id="main-content"] { scroll-margin-top: 999999px; }
+@media (min-width: 901px) { & { --hdr-logo-shrink: 0; } & .uk-menu-list > li > .uk-nav-link { white-space: nowrap; } }
 `;
 
-export default function Header({ t, menu, site, blocks, layout, over_hero, ...colours }: Props) {
+export default function Header({ t, menu, site, blocks, layout, over_hero, localization, ...colours }: Props) {
   const name = site?.store.name ?? '';
   const logo = site?.brand.logo ?? null;
   const width = site?.brand.logo_width ?? null;
@@ -98,7 +112,7 @@ export default function Header({ t, menu, site, blocks, layout, over_hero, ...co
   // name, from 96 to 240 px; a logo's link is never wider (TD21 final check: one of unknown size would otherwise take
   // its image's natural width, past its set width)
   const room = mark ? Math.min(Math.max(mark.w ?? width ?? 240, 96), 240) : Math.min(Math.max(textWidth(name) * 1.7, 96), MAX_NAME_WIDTH);
-  const fold = foldOf(menu, blocks.length, room, account, t('cart.title'));
+  const { fold, box } = foldOf(menu, blocks.length, room, account, t('cart.title'));
   const notice = site?.notice;
   const failed = !!t('errors.try_again') && (notice?.code === 'invalid' || notice?.code === 'unavailable');
   const over = over_hero === 'yes' && site?.page.kind === 'home';
@@ -115,6 +129,9 @@ export default function Header({ t, menu, site, blocks, layout, over_hero, ...co
       <Icon name="search" size={20} />
     </button>
   );
+  const switcher = localization === 'show' ? (
+    <span className="uk-hide-sm"><LocalizationMenu site={site} align="end" labels={{ language: t('footer.language'), currency: t('footer.currency'), label: t('footer.localization') }} /></span>
+  ) : null;
   const accountLink = account ? (
     <a href="/account" aria-label={t('account.title') || 'Account'} style={{ display: 'inline-grid', placeItems: 'center', width: 'clamp(32px, 10vw, 40px)', height: 40, borderRadius: 'var(--uk-radius-pill)', color: 'var(--uk-color-ink)' }}>
       <Icon name="user" size={20} />
@@ -145,6 +162,7 @@ export default function Header({ t, menu, site, blocks, layout, over_hero, ...co
               {centered ? logoLink : <div className={fold || undefined} style={{ display: 'flex', alignItems: 'center', minWidth: 0 }}><NavMenu menu={menu} label={t('navigation.menu')}>{blocks.map((b) => <li key={b.key}>{b}</li>)}</NavMenu></div>}
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 4 }}>
                 {centered ? null : <form action="/search" role="search" aria-label={t('search.search') || 'Search'} style={{ display: 'flex', alignItems: 'center' }}>{searchButton}</form>}
+                {switcher}
                 {accountLink}
                 <CartLink label={t('cart.title')} />
               </div>
@@ -166,7 +184,7 @@ export default function Header({ t, menu, site, blocks, layout, over_hero, ...co
         <Container>
           <div className={fold || undefined} style={{ display: 'flex', alignItems: 'center', gap: 'clamp(8px, 3vw, 44px)', minHeight: 76 }}>
             {mark || name ? (
-              <a href="/" style={{ flex: '0 1 auto', minWidth: 'min(96px, 30vw)', maxWidth: mark ? room : `min(${MAX_NAME_WIDTH}px, 100%)`, overflow: 'hidden', textOverflow: mark ? 'ellipsis' : undefined, whiteSpace: mark ? 'nowrap' : undefined, display: mark ? undefined : '-webkit-box', WebkitBoxOrient: mark ? undefined : 'vertical', WebkitLineClamp: mark ? undefined : 2, lineHeight: mark ? undefined : 1.2, textWrap: mark ? undefined : 'balance', overflowWrap: mark ? undefined : 'anywhere', fontFamily: 'var(--uk-font-heading)', fontSize: 'clamp(21px, 5.4vw, 26px)', fontWeight: 700, letterSpacing: '.01em', color: 'var(--uk-color-heading)', textDecoration: 'none' }}>
+              <a href="/" style={{ flex: '0 var(--hdr-logo-shrink, 1) auto', minWidth: 'min(96px, 30vw)', maxWidth: mark ? room : `min(${MAX_NAME_WIDTH}px, 100%)`, overflow: 'hidden', textOverflow: mark ? 'ellipsis' : undefined, whiteSpace: mark ? 'nowrap' : undefined, display: mark ? undefined : '-webkit-box', WebkitBoxOrient: mark ? undefined : 'vertical', WebkitLineClamp: mark ? undefined : 2, lineHeight: mark ? undefined : 1.2, textWrap: mark ? undefined : 'balance', overflowWrap: mark ? undefined : 'anywhere', fontFamily: 'var(--uk-font-heading)', fontSize: 'clamp(21px, 5.4vw, 26px)', fontWeight: 700, letterSpacing: '.01em', color: 'var(--uk-color-heading)', textDecoration: 'none' }}>
                 {mark ? (
                   <img src={mark.src} alt={mark.alt} width={mark.w} height={mark.h} style={{ display: 'block', width: mark.w ?? 'auto', height: mark.w || width ? 'auto' : 40, maxWidth: !mark.w && width ? `min(${width}px, 100%)` : '100%', maxHeight: 'min(64px, 12vw)', aspectRatio: mark.w ? `${mark.w} / ${mark.h}` : undefined, objectFit: 'contain', objectPosition: 'left center' }} />
                 ) : name}
@@ -175,13 +193,14 @@ export default function Header({ t, menu, site, blocks, layout, over_hero, ...co
             <NavMenu menu={menu} label={t('navigation.menu')}>{blocks.map((b) => <li key={b.key}>{b}</li>)}</NavMenu>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginLeft: 'auto' }}>
               <form action="/search" role="search" aria-label={t('search.search') || 'Search'} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                <span className="uk-hide-sm">
-                  <input className="uk-input" type="search" name="q" aria-label={t('search.search') || 'Search'} placeholder={t('search.search')} data-site-suggest="" style={{ width: 'clamp(120px, 14vw, 240px)', minHeight: 40, padding: '0 16px', borderRadius: 'var(--uk-radius-pill)' }} />
+                <span className="uk-hide-sm" style={{ flex: `0 1 clamp(120px, 14vw, ${box}px)`, minWidth: 72 }}>
+                  <input className="uk-input" type="search" name="q" aria-label={t('search.search') || 'Search'} placeholder={t('search.search')} data-site-suggest="" style={{ width: '100%', minHeight: 40, padding: '0 16px', borderRadius: 'var(--uk-radius-pill)' }} />
                 </span>
                 <button type="submit" aria-label={t('search.search') || 'Search'} style={{ display: 'inline-grid', placeItems: 'center', width: 'clamp(32px, 10vw, 40px)', height: 40, padding: 0, border: 0, borderRadius: 'var(--uk-radius-pill)', background: 'transparent', color: 'var(--uk-color-ink)', cursor: 'pointer' }}>
                   <Icon name="search" size={20} />
                 </button>
               </form>
+              {switcher}
               {account ? (
                 <a href="/account" aria-label={t('account.title') || 'Account'} style={{ display: 'inline-grid', placeItems: 'center', width: 'clamp(32px, 10vw, 40px)', height: 40, borderRadius: 'var(--uk-radius-pill)', color: 'var(--uk-color-ink)' }}>
                   <Icon name="user" size={20} />

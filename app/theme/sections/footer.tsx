@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { Container, Field, Icon, LocalizationForm, NewsletterFields, newsletterOpen, Notice, PaymentIcons, paymentMarks, safeUrl, sectionColours, telHref } from 'ui-kit';
+import { Container, Field, Icon, LocalizationMenu, NewsletterFields, newsletterOpen, Notice, PaymentIcons, paymentMarks, safeUrl, sectionColours, telHref } from 'ui-kit';
 import type { MenuData, MenuItem, SiteInfo, Translate } from 'ui-kit';
 
 export const schema = {
@@ -15,6 +15,8 @@ export const schema = {
     { id: 'currency_button', type: 'text', label: 'Currency button label', retired: true },
     { id: 'payments_label', type: 'text', label: 'Payment methods label', retired: true },
     { id: 'newsletter', type: 'select', label: 'Newsletter sign-up', options: ['hide', 'show'], default: 'hide' },
+    { id: 'show_email', type: 'select', label: 'Support email', options: ['hide', 'show'], default: 'hide' },
+    { id: 'show_phone', type: 'select', label: 'Support phone', options: ['hide', 'show'], default: 'hide' },
     { id: 'newsletter_heading', type: 'text', label: 'Newsletter heading', retired: true },
     { id: 'email_label', type: 'text', label: 'Email field label', retired: true },
     { id: 'subscribe_label', type: 'text', label: 'Subscribe button label', retired: true },
@@ -42,7 +44,7 @@ export const schema = {
 
 type Props = {
   t: Translate;
-  menu?: MenuData | null; layout?: string; brand?: string; show_payments?: string; tagline?: string; note?: string; newsletter?: string;
+  menu?: MenuData | null; layout?: string; brand?: string; show_payments?: string; tagline?: string; note?: string; newsletter?: string; show_email?: string; show_phone?: string;
     social?: { icon?: string; label?: string; href?: string }[]; background_colour?: string; text_colour?: string; accent_colour?: string; site?: SiteInfo; blocks: ReactElement[];
 };
 
@@ -77,21 +79,24 @@ function column(item: MenuItem, i: number) {
 }
 
 // The store's name, contacts, policies and payment methods come from its settings, the columns from its footer menu
+// (the support email with show_email show, the phone with show_phone show; both hidden by default, 2026-11-23: a
+// store's support email can be its owner's sign-up address, and the contact page is where shoppers look for them)
 // and the social links from the theme settings (else the footer's own list), each an icon named by its network. The
 // newsletter sign-up is optional and shown only when the store takes email sign-ups; its outcome (the page's notice)
-// shows above the form. With none of it, there is no footer.
+// shows above the form. With none of it, there is no footer. A word too long for its column (a long email address or
+// link) breaks onto the next line rather than running past the page's edge (2026-11-23 usability test).
 // layout: columns (the brand beside the menu's columns), centered (everything in one centered column, the columns in a
 // centered row) or wordmark (columns, ending with the store's name set as large as the page's width allows). brand: the store's name, or the theme
 // settings' logo (the name without one). The bottom bar shows the store's payment methods as their brands' marks
 // (ui-kit PaymentIcons), never words; show_payments hide: none. It also credits Swell with a link to swell.is, in the
 // merchant's words (Store text footer.powered_by; blanked: no credit).
-export default function Footer({ t, menu, layout, brand, show_payments, tagline, note, newsletter, social = [], site, blocks, ...colours
+export default function Footer({ t, menu, layout, brand, show_payments, show_email, show_phone, tagline, note, newsletter, social = [], site, blocks, ...colours
 }: Props) {
   const store = site?.store;
   const name = store?.name ?? '';
   const contact = {
-    email: store?.support_email ? safeUrl(`mailto:${store.support_email}`) : undefined,
-    phone: telHref(store?.support_phone),
+    email: show_email === 'show' && store?.support_email ? safeUrl(`mailto:${store.support_email}`) : undefined,
+    phone: show_phone === 'show' ? telHref(store?.support_phone) : undefined,
   };
   const items = (menu?.items ?? []).filter((item) => item && typeof item.name === 'string');
   const brandSocial = site?.brand.social ?? [];
@@ -103,14 +108,15 @@ export default function Footer({ t, menu, layout, brand, show_payments, tagline,
   const payments = show_payments === 'hide' ? [] : paymentMarks(store?.payment_methods);
   const credit = t('footer.powered_by');
   const signup = newsletter === 'show' && newsletterOpen(site);
-  const currencies = (store?.currencies ?? []).length >= 2;
+  // the shopper's language and currency switcher: a store with two or more languages or currencies
+  const currencies = (store?.currencies ?? []).length >= 2 || (site?.languages ?? []).length >= 2;
   // nothing to show (an empty store, nothing typed in): no footer at all
   const shown = name || tagline || note || contact.email || contact.phone || currencies || items.length || blocks.length || signup || policies.length || links.length || payments.length;
   if (!shown) return null;
   const centered = layout === 'centered';
   const logo = brand === 'logo' ? site?.brand.logo ?? null : null;
   return (
-    <footer style={{ padding: 'var(--uk-section-sm) 0 var(--uk-space-6)', borderTop: '1px solid var(--uk-color-line)', background: 'var(--uk-color-bg)', textAlign: centered ? 'center' : undefined, ...sectionColours(colours) }}>
+    <footer style={{ padding: 'var(--uk-section-sm) 0 var(--uk-space-6)', overflowWrap: 'anywhere', borderTop: '1px solid var(--uk-color-line)', background: 'var(--uk-color-bg)', textAlign: centered ? 'center' : undefined, ...sectionColours(colours) }}>
       <Container>
         <div className={centered ? undefined : 'uk-split'} style={{ display: centered ? 'grid' : undefined, justifyItems: centered ? 'center' : undefined, gridTemplateColumns: centered ? undefined : 'minmax(0, 1.2fr) minmax(0, 2fr)', gap: 'var(--uk-space-7)', alignItems: 'start' }}>
           <div style={{ display: 'grid', gap: 'var(--uk-space-4)', justifyItems: centered ? 'center' : 'start' }}>
@@ -138,7 +144,7 @@ export default function Footer({ t, menu, layout, brand, show_payments, tagline,
                 ) : null}
               </address>
             ) : null}
-            <LocalizationForm site={site} label={t('footer.currency')} submit={t('footer.change_currency')} />
+            <LocalizationMenu site={site} up labels={{ language: t('footer.language'), currency: t('footer.currency'), label: t('footer.localization') }} />
           </div>
           {items.length || blocks.length ? (
             <nav aria-label={menu?.name || undefined} style={{ display: centered ? 'flex' : 'grid', flexWrap: centered ? 'wrap' : undefined, justifyContent: centered ? 'center' : undefined, gridTemplateColumns: centered ? undefined : 'repeat(auto-fit, minmax(140px, 1fr))', gap: 'var(--uk-space-6)' }}>

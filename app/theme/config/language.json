@@ -34,7 +34,8 @@
       "note": "Label of the order note box in the cart (when the theme shows it)",
       "note_save": "Button that saves the order note",
       "note_hint": "Line under the order note box, e.g. delivery instructions (blank: none)",
-      "note_saved": "Message after the order note is saved"
+      "note_saved": "Message after the order note is saved",
+      "updating": "Line in the cart drawer while the cart is being updated"
     },
     "subtotal": "Subtotal",
     "discount": "Discount",
@@ -67,7 +68,8 @@
     "note": "Order note",
     "note_save": "Save note",
     "note_hint": "",
-    "note_saved": "Note saved."
+    "note_saved": "Note saved.",
+    "updating": "Updating your cart…"
   },
   "product": {
     "$label": "Product",
@@ -100,7 +102,8 @@
       "addon": "An add-on choice in a product form ({name} and {price} are filled in)",
       "pin": "A product pin on a photo, for screen readers ({name} is filled in)",
       "sign_in_prices": "Shown instead of prices and add to cart when the store shows prices to signed-in customers only",
-      "prices_pending": "Shown instead of prices to a signed-in customer the store hasn't approved yet (links to the theme's apply page when it has one)"
+      "prices_pending": "Shown instead of prices to a signed-in customer the store hasn't approved yet (links to the theme's apply page when it has one)",
+      "related": "Heading of a product grid on a product page that has a link but no heading of its own"
     },
     "add_to_cart": "Add to cart",
     "sold_out": "Sold out",
@@ -133,7 +136,8 @@
     "addon": "Add {name} (+{price})",
     "pin": "See {name}",
     "sign_in_prices": "Sign in to see prices",
-    "prices_pending": "Prices show once your account is approved"
+    "prices_pending": "Prices show once your account is approved",
+    "related": "You may also like"
   },
   "collection": {
     "$label": "Product lists",
@@ -141,7 +145,8 @@
       "subcategories": "Subcategory links on a category page (screen readers)",
       "no_categories": "Message when the categories page has none",
       "count": "Product count on product lists ({count} is filled in)",
-      "empty": "Message when a category has no products"
+      "empty": "Message when a category has no products",
+      "popular": "Heading of a product grid (outside product pages) that has a link but no heading of its own"
     },
     "subcategories": "Subcategories",
     "no_categories": "No categories yet.",
@@ -149,7 +154,8 @@
       "one": "{count} product",
       "other": "{count} products"
     },
-    "empty": "No products here yet."
+    "empty": "No products here yet.",
+    "popular": "Popular right now"
   },
   "filter": {
     "$label": "Filters",
@@ -434,14 +440,16 @@
       "subscribed": "Message after subscribing to the newsletter",
       "failed": "Error when a newsletter sign-up fails",
       "title": "Newsletter heading in the footer",
-      "subscribe": "Subscribe button in the footer’s newsletter"
+      "subscribe": "Subscribe button in the footer’s newsletter",
+      "heading": "Heading of a newsletter sign-up section that has no heading or text of its own"
     },
     "email": "Email address",
     "placeholder": "you@example.com",
     "subscribed": "Thanks for subscribing.",
     "failed": "That didn't work. Check your email address and try again.",
     "title": "Newsletter",
-    "subscribe": "Subscribe"
+    "subscribe": "Subscribe",
+    "heading": "Stay in touch"
   },
   "contact": {
     "$label": "Contact",
@@ -481,12 +489,16 @@
   "footer": {
     "$label": "Footer",
     "$notes": {
-      "currency": "Currency picker label in the footer",
-      "change_currency": "Button that changes the currency in the footer",
+      "currency": "Currency heading in the language and currency switcher (footer, and the header when shown)",
+      "change_currency": "Button that changed the currency in the footer (no longer shown: the switcher changes it in one click)",
       "payment_methods": "Payment methods list name in the footer (screen readers)",
-      "powered_by": "Credit in the footer's bottom line, a link to swell.is (empty: no credit)"
+      "powered_by": "Credit in the footer's bottom line, a link to swell.is (empty: no credit)",
+      "language": "Language heading in the language and currency switcher (footer, and the header when shown)",
+      "localization": "Name of the language and currency switcher, for screen readers"
     },
     "currency": "Currency",
+    "language": "Language",
+    "localization": "Language and currency",
     "change_currency": "Change",
     "payment_methods": "Payment methods",
     "powered_by": "Powered by Swell"

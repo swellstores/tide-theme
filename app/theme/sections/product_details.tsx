@@ -112,7 +112,7 @@ export default function ProductDetails(p: Props) {
               {main ? (
                 <Image image={main} sizes="(max-width: 900px) calc(100vw - 48px), (max-width: 1200px) calc(50.3vw - 51px), 552px" priority variantImage />
               ) : (
-                <span style={{ display: 'inline-grid', color: 'var(--uk-color-text-subtle)' }}><Icon name="bag" size={72} /></span>
+                <span className='uk-media-icon' style={{ display: 'inline-grid', color: 'var(--uk-color-text-subtle)' }}><Icon name="bag" size={72} /></span>
               )}
             </div>
             {photos.length > 1 ? (

@@ -4,13 +4,17 @@ import { Container, Eyebrow, Heading, Icon, safeUrl, sectionColours, telHref, Te
 
 // How to reach the store: its support email and phone from the store's settings (an email link and a call link), its
 // social links from the theme settings, and the merchant's own address and opening hours, which Swell doesn't hold
-// (empty until written here). Nothing from the store's settings is typed in here.
+// (empty until written here). Email and Phone here are optional: empty shows the store's (Settings › Store), so nothing
+// from the store's settings is typed in; one written here (a moved site's own, 2026-11-23) shows instead. No number,
+// no call link.
 export const schema = {
   label: 'Contact details',
   fields: [
     { id: 'eyebrow', type: 'text', label: 'Eyebrow' },
     { id: 'heading', type: 'text', label: 'Heading', default: 'Contact us' },
     { id: 'intro', type: 'textarea', label: 'Intro' },
+    { id: 'email', type: 'text', label: 'Email (empty: the store\'s)' },
+    { id: 'phone', type: 'text', label: 'Phone (empty: the store\'s)' },
     { id: 'email_label', type: 'text', label: 'Email label', retired: true },
     { id: 'phone_label', type: 'text', label: 'Phone label', retired: true },
     { id: 'address_label', type: 'text', label: 'Address label', retired: true },
@@ -26,7 +30,7 @@ export const schema = {
 
 type Props = {
   t: Translate;
-  eyebrow?: string; heading?: string; intro?: string; address?: string;   hours?: string; background_colour?: string; text_colour?: string; accent_colour?: string; site?: SiteInfo;
+  eyebrow?: string; heading?: string; intro?: string; email?: string; phone?: string; address?: string; hours?: string; background_colour?: string; text_colour?: string; accent_colour?: string; site?: SiteInfo;
 };
 
 const NETWORKS: Record<string, string> = { instagram: 'Instagram', facebook: 'Facebook', youtube: 'YouTube', tiktok: 'TikTok', x: 'X', pinterest: 'Pinterest', linkedin: 'LinkedIn' };
@@ -48,9 +52,11 @@ function Detail({ icon, label, children }: { icon: 'mail' | 'phone' | 'pin' | 'c
   );
 }
 
-export default function ContactDetails({ t, eyebrow, heading, intro, address, hours, site, ...colours }: Props) {
+export default function ContactDetails({ t, eyebrow, heading, intro, email, phone, address, hours, site, ...colours }: Props) {
   const store = site?.store;
-  const contact = { email: store?.support_email ? safeUrl(`mailto:${store.support_email}`) : undefined, phone: telHref(store?.support_phone) };
+  const mail = email?.trim() || store?.support_email || '';
+  const call = phone?.trim() || store?.support_phone || '';
+  const contact = { email: mail ? safeUrl(`mailto:${mail}`) : undefined, phone: telHref(call) };
   const place = lines(address);
   const open = lines(hours);
   const social = (site?.brand.social ?? []).map((s) => ({ icon: s.network, name: NETWORKS[s.network] ?? s.network, href: safeUrl(s.url) })).filter((s) => s.href);
@@ -67,12 +73,12 @@ export default function ContactDetails({ t, eyebrow, heading, intro, address, ho
           <address style={{ display: 'grid', gap: 'var(--uk-space-5)', fontStyle: 'normal' }}>
             {contact.email ? (
               <Detail icon="mail" label={t('common.email')}>
-                <a className="uk-button uk-button--secondary" href={contact.email}>{store?.support_email}</a>
+                <a className="uk-button uk-button--secondary" href={contact.email}>{mail}</a>
               </Detail>
             ) : null}
             {contact.phone ? (
               <Detail icon="phone" label={t('common.phone')}>
-                <a className="uk-button uk-button--secondary" href={contact.phone}>{store?.support_phone}</a>
+                <a className="uk-button uk-button--secondary" href={contact.phone}>{call}</a>
               </Detail>
             ) : null}
             {place.length ? <Detail icon="pin" label={t('contact.address')}>{place.map((t, i) => <span key={i} style={{ color: 'var(--uk-color-text-muted)' }}>{t}</span>)}</Detail> : null}
