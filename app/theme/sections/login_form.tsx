@@ -1,11 +1,13 @@
-import type { AuthView, Translate } from 'ui-kit';
+import type { AuthView, SiteInfo, Translate } from 'ui-kit';
 import { AuthForms, authHeading, Container, Heading, Notice } from 'ui-kit';
 
 // The sign-in page's forms (/account/login, /signup, /recover and a reset link), plain forms that work without
 // scripts: sign in, create an account (with the email sign-up choice when the store takes it), ask for a reset link and
 // choose a new password. The forms are ui-kit's (AuthForms, SignInForm, SignUpForm), so a fix to them reaches every
 // theme; this section lays them out. The view and what happened come from the page (a code, never Swell's text), shown
-// in the store's words (Store text). A store whose accounts are off shows only its message.
+// in the store's words (Store text). A store whose accounts are off shows only its message. When Wave sent the shopper
+// here from a page that needs an account (site.sign_in), the sign-in form says what it is for: "Sign in to see {label}."
+// (Store text login.sign_in_to_see; the label is the page's name as Wave looked it up, never the address's text).
 export const schema = {
   label: 'Sign-in form',
   fields: [
@@ -44,7 +46,9 @@ export const schema = {
 
 type Props = {
   t: Translate;
-  auth?: AuthView | null;           };
+  auth?: AuthView | null;
+  site?: SiteInfo;
+};
 
 export default function LoginForm(p: Props) {
   const { t } = p;
@@ -62,11 +66,15 @@ export default function LoginForm(p: Props) {
     save_password: t('login.save_password'), forgot: t('login.forgot'), back: t('login.back'), disabled: t('login.disabled'),
   };
   const heading = authHeading(auth, labels);
+  const why = p.site?.sign_in;
+  const reason = why?.reason === 'app_page' && why.label && auth.view === 'login' && auth.accounts !== 'disabled'
+    ? t('login.sign_in_to_see', { label: why.label }) : '';
   return (
     <section style={{ padding: 'var(--uk-section-sm) 0' }}>
       <Container width="narrow">
         <div style={{ maxWidth: 440, margin: '0 auto' }}>
           {heading ? <Heading level={1} size="lg">{heading}</Heading> : null}
+          {reason ? <p className="uk-notice" role="status" data-sign-in-reason={why!.reason}>{reason}</p> : null}
           {auth.accounts === 'disabled' ? null : <Notice notice={auth.notice} messages={messages} />}
           <AuthForms auth={auth} labels={labels} />
         </div>

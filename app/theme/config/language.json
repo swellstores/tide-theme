@@ -388,7 +388,8 @@
       "reset_failed": "Error when a reset link no longer works",
       "reset_sent": "Message after asking for a reset link",
       "reset_done": "Message after a new password is saved",
-      "check_form": "Error when a sign-in form isn’t accepted"
+      "check_form": "Error when a sign-in form isn’t accepted",
+      "sign_in_to_see": "Message on the sign-in page when a page needs an account ({label} is filled in with that page’s name)"
     },
     "sign_in": "Sign in",
     "create_title": "Create an account",
@@ -410,7 +411,8 @@
     "reset_failed": "That reset link doesn't work any more. Ask for a new one.",
     "reset_sent": "If an account uses that email, a reset link is on its way.",
     "reset_done": "Your password was changed. Sign in with it.",
-    "check_form": "Check the form and try again."
+    "check_form": "Check the form and try again.",
+    "sign_in_to_see": "Sign in to see {label}."
   },
   "common": {
     "$label": "Common words",
