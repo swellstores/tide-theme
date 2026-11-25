@@ -1,0 +1,14 @@
+{
+  "title": "App page",
+  "sections": [
+    {
+      "id": "app-page",
+      "type": "app_page",
+      "props": {
+        "page": {},
+        "width": "wide",
+        "columns": "3"
+      }
+    }
+  ]
+}
