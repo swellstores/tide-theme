@@ -87,6 +87,7 @@
       "trial": "Trial choice on a product",
       "bundle": "Heading above a bundle’s items",
       "rating": "Star rating on a product ({average} and {count} are filled in)",
+      "rated": "A product card's star rating, for screen readers ({average} and {count} are filled in)",
       "photo": "A product photo's thumbnail (screen readers; {number} is filled in)",
       "sale": "Sale badge on a product card's photo",
       "save": "Subscribe choice’s badge: the best plan’s savings ({percent} is filled in)",
@@ -117,7 +118,14 @@
     "subscribe": "Subscribe",
     "trial": "Try before you buy",
     "bundle": "In this bundle",
-    "rating": "{average} out of 5 stars, {count} reviews",
+    "rating": {
+      "one": "{average} out of 5 stars, {count} review",
+      "other": "{average} out of 5 stars, {count} reviews"
+    },
+    "rated": {
+      "one": "Rated {average} out of 5, {count} review",
+      "other": "Rated {average} out of 5, {count} reviews"
+    },
     "photo": "Photo {number}",
     "sale": "Sale",
     "save": "Save {percent}%",

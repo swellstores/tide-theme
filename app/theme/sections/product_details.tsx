@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import type { ProductData, ProductList, SiteInfo, Translate } from 'ui-kit';
-import { Breadcrumbs, Container, Heading, Icon, Image, pricesHiddenFor, ProductForm, RichText, SellList } from 'ui-kit';
+import { Breadcrumbs, Container, Heading, Icon, Image, pricesHiddenFor, ProductForm, RichText, SellList, Stars } from 'ui-kit';
 
 // Everything about the product comes from the store: its name, photos, price, options, stock, attributes, purchase
 // options, bundle items, category and rating. The fields here are the merchant's own promises and notes; fixed words
@@ -135,10 +135,8 @@ export default function ProductDetails(p: Props) {
               <Heading level={own ? 1 : 2} size="xl">{item.name}</Heading>
               {rating ? (
                 <p style={{ display: 'flex', alignItems: 'center', gap: 10, margin: '-4px 0 0', fontSize: 'var(--uk-text-sm)', color: 'var(--uk-color-text-muted)' }}>
-                  <span aria-hidden="true" style={{ display: 'inline-flex', gap: 2, color: 'var(--uk-color-highlight)' }}>
-                    {Array.from({ length: Math.round(Math.min(5, Math.max(0, rating.average))) }, (_, i) => <Icon key={i} name="star" size={16} />)}
-                  </span>
-                  {t('product.rating', { average: String(Math.round(rating.average * 10) / 10), count: String(rating.count) })}
+                  <Stars average={rating.average} size={16} />
+                  {t('product.rating', { average: String(Math.round(rating.average * 10) / 10), count: rating.count })}
                 </p>
               ) : null}
             </div>
