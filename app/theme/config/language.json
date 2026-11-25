@@ -104,7 +104,12 @@
       "pin": "A product pin on a photo, for screen readers ({name} is filled in)",
       "sign_in_prices": "Shown instead of prices and add to cart when the store shows prices to signed-in customers only",
       "prices_pending": "Shown instead of prices to a signed-in customer the store hasn't approved yet (links to the theme's apply page when it has one)",
-      "related": "Heading of a product grid on a product page that has a link but no heading of its own"
+      "related": "Heading of a product grid on a product page that has a link but no heading of its own",
+      "in_stock": "The Stock block on a product page when the chosen variant is in stock",
+      "shipping_returns": "Title of a new \"Shipping & returns\" row (Add block on the product page); the row is yours to edit once added",
+      "policies_intro": "Above the links to your refund policy and terms in a row with Store policies shown",
+      "size_guide": "Title of a new \"Size guide\" row (Add block on the product page)",
+      "size_guide_table": "Starting text of a new \"Size guide\" row: lines with | between cells make a table; you fill in the measurements"
     },
     "add_to_cart": "Add to cart",
     "sold_out": "Sold out",
@@ -145,7 +150,12 @@
     "pin": "See {name}",
     "sign_in_prices": "Sign in to see prices",
     "prices_pending": "Prices show once your account is approved",
-    "related": "You may also like"
+    "related": "You may also like",
+    "in_stock": "In stock",
+    "shipping_returns": "Shipping & returns",
+    "policies_intro": "For shipping and returns, see:",
+    "size_guide": "Size guide",
+    "size_guide_table": "Size | Chest | Waist\nS | |\nM | |\nL | |"
   },
   "collection": {
     "$label": "Product lists",

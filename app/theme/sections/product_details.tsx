@@ -1,12 +1,16 @@
 import type { ReactElement } from 'react';
-import type { ProductData, ProductList, SiteInfo, Translate } from 'ui-kit';
-import { Breadcrumbs, Container, Heading, Icon, Image, pricesHiddenFor, ProductForm, RichText, SellList, Stars } from 'ui-kit';
+import type { ProductData, SiteInfo, Translate } from 'ui-kit';
+import { Container, Icon, Image, pricesHiddenFor, ProductInfo } from 'ui-kit';
 
 // Everything about the product comes from the store: its name, photos, price, options, stock, attributes, purchase
-// options, bundle items, category and rating. The fields here are the merchant's own promises and notes; fixed words
-// come from Store text. The retired fields held a hand-made product (name, price, photos, colors,
-// sizes, reviews, specifications, links) or a badge every product would show: templates that still hold them save and
-// render, and they are not shown.
+// options, bundle items, category and rating. The info column beside the photos is blocks (2026-11-25), in the order the
+// merchant sets: the trail, name, rating, price, variant picker, purchase options, quantity and buy buttons share one
+// product form wherever they sit (ui-kit ProductInfo), and the description, specifications, collapsible rows, text,
+// promises, up-sells and app blocks go anywhere between them. The buy buttons can be hidden, never removed. The retired
+// fields held a hand-made product (name, price, photos, colors, sizes, reviews, specifications, links), a badge every
+// product would show, or what blocks hold now (the quantity box, attributes, up-sells, promises and details: a template
+// from before blocks gets them as blocks, blocks-migrate.ts); templates that still hold them save and render, and they
+// are not shown.
 export const schema = {
   label: 'Product details',
   fields: [
@@ -21,30 +25,28 @@ export const schema = {
     { id: 'was_label', type: 'text', label: 'Sale: word before the old price (for screen readers)', retired: true },
     { id: 'now_label', type: 'text', label: 'Sale: word before the new price (for screen readers)', retired: true },
     { id: 'quantity_label', type: 'text', label: 'Quantity label (empty: no quantity box)', retired: true },
-    { id: 'show_quantity', type: 'select', label: 'Quantity box', options: ['show', 'hide'], default: 'show' },
+    { id: 'show_quantity', type: 'select', label: 'Quantity box', options: ['show', 'hide'], retired: true },
     { id: 'purchase_label', type: 'text', label: 'Purchase options heading', retired: true },
     { id: 'one_time_label', type: 'text', label: 'One-time purchase', retired: true },
     { id: 'subscribe_label', type: 'text', label: 'Subscription', retired: true },
     { id: 'trial_label', type: 'text', label: 'Trial', retired: true },
-    { id: 'pairs', type: 'product_list', label: 'Pairs with (the product\'s up-sells)', max: 4, default: { from: 'up_sells', limit: 3 } },
-    { id: 'show_attributes', type: 'select', label: 'Product attributes', options: ['show', 'hide'], default: 'show' },
+    { id: 'pairs', type: 'product_list', label: 'Pairs with (the product\'s up-sells)', max: 4, retired: true },
+    { id: 'show_attributes', type: 'select', label: 'Product attributes', options: ['show', 'hide'], retired: true },
     { id: 'bundle_label', type: 'text', label: 'Bundle items heading', retired: true },
     { id: 'rating_label', type: 'text', label: 'Rating ({average} and {count} are filled in)', retired: true },
     {
-      id: 'points', type: 'list', label: 'Promises', max: 4,
+      id: 'points', type: 'list', label: 'Promises', max: 4, retired: true,
       item: [
         { id: 'icon', type: 'select', label: 'Icon', options: ['truck', 'return', 'shield', 'leaf', 'clock', 'check'], default: 'check' },
         { id: 'text', type: 'text', label: 'Text' },
       ],
-      default: [],
     },
     {
-      id: 'details', type: 'list', label: 'Details on every product (put product facts in its description or attributes)', max: 6,
+      id: 'details', type: 'list', label: 'Details on every product (put product facts in its description or attributes)', max: 6, retired: true,
       item: [
         { id: 'title', type: 'text', label: 'Title' },
         { id: 'body', type: 'textarea', label: 'Text' },
       ],
-      default: [],
     },
     { id: 'breadcrumbs', type: 'list', label: 'Breadcrumb', retired: true, item: [{ id: 'label', type: 'text' }, { id: 'href', type: 'url' }] },
     { id: 'title', type: 'text', label: 'Product name', retired: true },
@@ -65,44 +67,37 @@ export const schema = {
     { id: 'cta_href', type: 'url', label: 'Button link', retired: true },
     { id: 'badge', type: 'text', label: 'Badge', retired: true },
   ],
-  blocks: { types: ['text'], max: 4 },
+  blocks: {
+    types: [
+      'product_breadcrumbs', 'product_title', 'product_rating', 'product_price', 'variant_picker', 'purchase_options', 'product_quantity', 'add_to_cart',
+      'product_description', 'product_specs', 'product_stock', 'collapsible_row', 'text', 'pairs_with', 'bundle_items', 'promises', 'app_block',
+    ],
+    max: 30,
+    default: [
+      { type: 'product_breadcrumbs' }, { type: 'product_title' }, { type: 'product_rating' }, { type: 'product_price' }, { type: 'variant_picker' },
+      { type: 'purchase_options' }, { type: 'product_quantity' }, { type: 'add_to_cart' }, { type: 'pairs_with', props: { products: { from: 'up_sells', limit: 3 } } },
+      { type: 'product_description' }, { type: 'bundle_items' }, { type: 'product_specs' },
+    ],
+    required: ['add_to_cart'],
+  },
 } as const;
 
-type Props = {
-  blocks?: ReactElement[]; // core text blocks, under the buy box
-  t: Translate; show_quantity?: string; pairs?: ProductList | null;
-  product?: ProductData | null; site?: SiteInfo;     show_attributes?: string;   points?: { icon?: 'truck' | 'return' | 'shield' | 'leaf' | 'clock' | 'check'; text?: string }[]; details?: { title?: string; body?: string }[];
-};
+type Props = { blocks?: ReactElement[]; t: Translate; product?: ProductData | null; site?: SiteInfo };
 
 // The gallery: the selected variant's photo (else the product's first) large, marked for the platform script, which
 // swaps it for the chosen variant's; then every photo of the product, wrapping; a plain tile without one. Beside it:
-// the trail Home › category › product, the name, the rating (only with a reviews app's), the add-to-cart form (the
-// page's own: the selected variant's price, every option, stock states, purchase options, quantity), the description,
-// the bundle's items, the attributes, then the merchant's promises and notes. Nothing without a product. Only the
-// page's own product (its address is the page's) has the page's heading (h1) and the primary form (the one whose
-// choice goes into the address); another product shown here has an h2. Each thumbnail links to its photo, which the
-// platform script shows in the large image instead (data-site-photo); its name is the photo's caption (its alt, when that
-// is not the product's name), else "Photo 2" in the store's words.
+// the info column of blocks (ProductInfo: one product form for them all). Nothing but the blocks without a product.
+// Only the page's own product (its address is the page's) has the page's heading (h1, the Title block's) and the primary
+// form (the one whose choice goes into the address). Each thumbnail links to its photo, which the platform script shows
+// in the large image instead (data-site-photo); its name is the photo's caption (its alt, when that is not the product's
+// name), else "Photo 2" in the store's words.
 export default function ProductDetails(p: Props) {
   const { t } = p;
   const item = p.product && typeof p.product === 'object' ? p.product : null;
-  // no product: the merchant's text blocks alone
   if (!item) return <>{p.blocks}</>;
   const own = p.site?.page.kind === 'product' && item.url === p.site.page.path;
   const main = item.selected?.image ?? item.image;
   const photos = Array.isArray(item.images) ? item.images : [];
-  const points = (p.points ?? []).filter((pt) => pt.text);
-  const details = (p.details ?? []).filter((d) => d.title || d.body);
-  const attributes = p.show_attributes === 'hide' ? [] : item.attributes.filter((a) => a.values.length);
-  const rating = item.rating && t('product.rating') ? item.rating : null;
-  const labels = {
-    add: t('product.add_to_cart'), sold_out: t('product.sold_out'), unavailable: t('product.unavailable'), preorder: t('product.preorder'), backorder: t('product.backorder'),
-    was: t('product.was'), now: t('product.now'), quantity: p.show_quantity === 'hide' ? '' : t('common.quantity'), purchase: t('product.purchase_options'), one_time: t('product.one_time'),
-    subscribe: t('product.subscribe'), trial: t('product.trial'), save: (percent: number) => t('product.save', { percent }),
-    delivered: (every: string) => t('product.delivered', { every }), billed: (every: string) => t('product.billed', { every }),
-    payments: (count: number) => t('product.payments', { count }), trial_then: (days: string, price: string) => t('product.trial_then', { days, price }),
-    promise: t('product.promise'),
-  };
   return (
     <section style={{ padding: 'var(--uk-space-7) 0 var(--uk-space-8)' }}>
       <Container>
@@ -127,77 +122,10 @@ export default function ProductDetails(p: Props) {
               </ul>
             ) : null}
           </div>
-          <div style={{ display: 'grid', gap: 'var(--uk-space-5)', paddingTop: 4 }}>
-            <div>
-              <div style={{ marginBottom: 'var(--uk-space-3)' }}>
-                <Breadcrumbs items={[t('navigation.home') ? { name: t('navigation.home'), url: '/' } : null, item.category, { name: item.name, url: item.url }]} label={t('navigation.breadcrumb')} />
-              </div>
-              <Heading level={own ? 1 : 2} size="xl">{item.name}</Heading>
-              {rating ? (
-                <p style={{ display: 'flex', alignItems: 'center', gap: 10, margin: '-4px 0 0', fontSize: 'var(--uk-text-sm)', color: 'var(--uk-color-text-muted)' }}>
-                  <Stars average={rating.average} size={16} />
-                  {t('product.rating', { average: String(Math.round(rating.average * 10) / 10), count: rating.count })}
-                </p>
-              ) : null}
-            </div>
-            <ProductForm product={item} labels={labels} primary={own} locale={p.site?.locale} pricesHidden={pricesHiddenFor(p.site, t('product.sign_in_prices'), { label: t('product.prices_pending'), href: p.site?.theme_settings?.apply_page })} />
-            {p.blocks}
-            {p.pairs?.items?.length ? (
-              <div>
-                {t('product.pairs_with') ? <h2 style={{ margin: '0 0 var(--uk-space-3)', fontSize: 'var(--uk-text-sm)', fontWeight: 700, color: 'var(--uk-color-heading)' }}>{t('product.pairs_with')}</h2> : null}
-                <SellList list={p.pairs} pricesHidden={pricesHiddenFor(p.site, t('product.sign_in_prices'), { label: t('product.prices_pending'), href: p.site?.theme_settings?.apply_page })} labels={{ add: t('product.quick_add'), choose: t('product.choose'), was: t('product.was'), now: t('product.now'), sold_out: t('product.sold_out') }} />
-              </div>
-            ) : null}
-            {item.description.length ? (
-              <div style={{ fontSize: 'var(--uk-text-md)', color: 'var(--uk-color-text-muted)' }}><RichText value={item.description} /></div>
-            ) : null}
-            {item.bundle.length && t('product.bundle') ? (
-              <div>
-                <h2 style={{ margin: '0 0 var(--uk-space-2)', fontSize: 'var(--uk-text-sm)', fontWeight: 700, color: 'var(--uk-color-heading)' }}>{t('product.bundle')}</h2>
-                <ul style={{ display: 'grid', gap: 6, margin: 0, padding: 0, listStyle: 'none', fontSize: 'var(--uk-text-sm)' }}>
-                  {item.bundle.map((b, i) => (
-                    <li key={i}>
-                      {`${b.quantity} × `}
-                      {b.url ? <a href={b.url} style={{ color: 'inherit', textUnderlineOffset: 3 }}>{b.name}</a> : b.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-            {attributes.length ? (
-              <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 'var(--uk-space-4)', margin: 0, padding: 'var(--uk-space-4) 0', borderTop: '1px solid var(--uk-color-line)', borderBottom: '1px solid var(--uk-color-line)' }}>
-                {attributes.map((a) => (
-                  <div key={a.id}>
-                    <dt style={{ fontSize: 'var(--uk-text-xs)', color: 'var(--uk-color-text-muted)' }}>{a.name}</dt>
-                    <dd style={{ margin: 'var(--uk-space-1) 0 0', fontSize: 'var(--uk-text-md)', fontWeight: 600, color: 'var(--uk-color-heading)' }}>{a.values.join(', ')}</dd>
-                  </div>
-                ))}
-              </dl>
-            ) : null}
-            {points.length ? (
-              <ul style={{ display: 'grid', gap: 'var(--uk-space-3)', margin: 0, padding: 'var(--uk-space-4)', background: 'var(--uk-color-muted-bg)', borderRadius: 'var(--uk-radius-md)', listStyle: 'none', fontSize: 'var(--uk-text-sm)', color: 'var(--uk-color-text-muted)' }}>
-                {points.map((pt, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <span style={{ flex: 'none', display: 'inline-grid', color: 'var(--uk-color-accent)' }}><Icon name={pt.icon ?? 'check'} size={18} /></span>
-                    {pt.text}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-            {details.length ? (
-              <div style={{ borderTop: '1px solid var(--uk-color-line)' }}>
-                {details.map((d, i) => (
-                  <details key={i} className="uk-disclosure" open={i === 0}>
-                    <summary>
-                      {d.title}
-                      <Icon name="chevron" size={18} />
-                    </summary>
-                    <p>{d.body}</p>
-                  </details>
-                ))}
-              </div>
-            ) : null}
-          </div>
+          <ProductInfo
+            product={item} primary={own} locale={p.site?.locale} blocks={p.blocks} style={{ paddingTop: 4 }}
+            pricesHidden={pricesHiddenFor(p.site, t('product.sign_in_prices'), { label: t('product.prices_pending'), href: p.site?.theme_settings?.apply_page })}
+          />
         </div>
       </Container>
     </section>

@@ -4,11 +4,74 @@
     {
       "id": "details",
       "type": "product_details",
-      "props": {
-        "show_attributes": "show",
-        "points": [],
-        "details": []
-      }
+      "props": {},
+      "blocks": [
+        {
+          "id": "product_breadcrumbs",
+          "type": "product_breadcrumbs",
+          "props": {}
+        },
+        {
+          "id": "product_title",
+          "type": "product_title",
+          "props": {}
+        },
+        {
+          "id": "product_rating",
+          "type": "product_rating",
+          "props": {}
+        },
+        {
+          "id": "product_price",
+          "type": "product_price",
+          "props": {}
+        },
+        {
+          "id": "variant_picker",
+          "type": "variant_picker",
+          "props": {}
+        },
+        {
+          "id": "purchase_options",
+          "type": "purchase_options",
+          "props": {}
+        },
+        {
+          "id": "product_quantity",
+          "type": "product_quantity",
+          "props": {}
+        },
+        {
+          "id": "add_to_cart",
+          "type": "add_to_cart",
+          "props": {}
+        },
+        {
+          "id": "pairs_with",
+          "type": "pairs_with",
+          "props": {
+            "products": {
+              "from": "up_sells",
+              "limit": 3
+            }
+          }
+        },
+        {
+          "id": "product_description",
+          "type": "product_description",
+          "props": {}
+        },
+        {
+          "id": "bundle_items",
+          "type": "bundle_items",
+          "props": {}
+        },
+        {
+          "id": "product_specs",
+          "type": "product_specs",
+          "props": {}
+        }
+      ]
     },
     {
       "id": "related",
