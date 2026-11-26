@@ -19,7 +19,7 @@ export default function PairsWith({ t, site, products }: Props) {
   return (
     <div>
       {t('product.pairs_with') ? <h2 className="uk-pairs-heading">{t('product.pairs_with')}</h2> : null}
-      <SellList list={products} pricesHidden={hidden} labels={{ add: t('product.quick_add'), choose: t('product.choose'), was: t('product.was'), now: t('product.now'), sold_out: t('product.sold_out') }} />
+      <SellList list={products} pricesHidden={hidden} labels={{ add: t('product.quick_add'), choose: t('product.choose'), was: t('product.was'), now: t('product.now'), sold_out: t('product.sold_out'), rating: (average, count) => t('product.rated', { average, count }) }} />
     </div>
   );
 }

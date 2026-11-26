@@ -1,7 +1,8 @@
 import { Icon } from 'ui-kit';
 
 // The merchant's promises on every product (free returns, a warranty), each with an icon, in one box. Only what the
-// merchant writes; nothing without any.
+// merchant writes; nothing without any. Its looks are ui-kit.css's .uk-promises, .uk-promise and .uk-promise-icon, so a
+// section's styles can change them.
 export const schema = {
   label: 'Promises',
   icon: 'list',
@@ -23,10 +24,10 @@ export default function Promises({ points }: Props) {
   const list = (points ?? []).filter((pt) => pt.text);
   if (!list.length) return null;
   return (
-    <ul style={{ display: 'grid', gap: 'var(--uk-space-3)', margin: 0, padding: 'var(--uk-space-4)', background: 'var(--uk-color-muted-bg)', borderRadius: 'var(--uk-radius-md)', listStyle: 'none', fontSize: 'var(--uk-text-sm)', color: 'var(--uk-color-text-muted)' }}>
+    <ul className="uk-promises">
       {list.map((pt, i) => (
-        <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <span style={{ flex: 'none', display: 'inline-grid', color: 'var(--uk-color-accent)' }}><Icon name={pt.icon ?? 'check'} size={18} /></span>
+        <li key={i} className="uk-promise">
+          <span className="uk-promise-icon"><Icon name={pt.icon ?? 'check'} size={18} /></span>
           {pt.text}
         </li>
       ))}

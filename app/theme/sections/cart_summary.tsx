@@ -50,7 +50,7 @@ export default function CartSummary(p: Props) {
   const sells = p.cross_sells?.items?.length ? (
     <div style={{ display: 'grid', gap: 'var(--uk-space-3)' }}>
       {t('cart.add_to_order') ? <h2 style={{ margin: 0, fontSize: 'var(--uk-text-sm)', fontWeight: 700, color: 'var(--uk-color-heading)' }}>{t('cart.add_to_order')}</h2> : null}
-      <SellList list={p.cross_sells} pricesHidden={pricesHiddenFor(p.site, t('product.sign_in_prices'), { label: t('product.prices_pending'), href: p.site?.theme_settings?.apply_page })} labels={{ add: t('product.quick_add'), choose: t('product.choose'), was: t('product.was'), now: t('product.now'), sold_out: t('product.sold_out') }} />
+      <SellList list={p.cross_sells} pricesHidden={pricesHiddenFor(p.site, t('product.sign_in_prices'), { label: t('product.prices_pending'), href: p.site?.theme_settings?.apply_page })} labels={{ add: t('product.quick_add'), choose: t('product.choose'), was: t('product.was'), now: t('product.now'), sold_out: t('product.sold_out'), rating: (average, count) => t('product.rated', { average, count }) }} />
     </div>
   ) : null;
   const upsells = sells ? (

@@ -18,7 +18,7 @@ export default function HotspotBlock({ t, product, x, y, site }: { t: Translate;
   return (
     <Hotspot
       product={product && typeof product === 'object' ? product : null} x={x} y={y} pricesHidden={pricesHiddenFor(site, t('product.sign_in_prices'), { label: t('product.prices_pending'), href: site?.theme_settings?.apply_page })}
-      labels={{ show: (name: string) => t('product.pin', { name }), add: t('product.quick_add'), choose: t('product.choose'), was: t('product.was'), now: t('product.now'), sold_out: t('product.sold_out') }}
+      labels={{ show: (name: string) => t('product.pin', { name }), add: t('product.quick_add'), choose: t('product.choose'), was: t('product.was'), now: t('product.now'), sold_out: t('product.sold_out'), rating: (average, count) => t('product.rated', { average, count }) }}
     />
   );
 }
