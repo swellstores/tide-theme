@@ -9,7 +9,7 @@ export const schema = {
     {
       id: 'points', type: 'list', label: 'Promises', max: 4,
       item: [
-        { id: 'icon', type: 'select', label: 'Icon', options: ['truck', 'return', 'shield', 'leaf', 'clock', 'check'], default: 'check' },
+        { id: 'icon', type: 'select', label: 'Icon', options: ['truck', 'return', 'shield', 'leaf', 'clock', 'check', 'gift', 'heart', 'box'], default: 'check' },
         { id: 'text', type: 'text', label: 'Text' },
       ],
       default: [],
@@ -17,7 +17,7 @@ export const schema = {
   ],
 } as const;
 
-type Props = { points?: { icon?: 'truck' | 'return' | 'shield' | 'leaf' | 'clock' | 'check'; text?: string }[] };
+type Props = { points?: { icon?: 'truck' | 'return' | 'shield' | 'leaf' | 'clock' | 'check' | 'gift' | 'heart' | 'box'; text?: string }[] };
 
 export default function Promises({ points }: Props) {
   const list = (points ?? []).filter((pt) => pt.text);

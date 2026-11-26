@@ -6,7 +6,7 @@ import { Container, Icon, Image, pricesHiddenFor, ProductInfo } from 'ui-kit';
 // options, bundle items, category and rating. The info column beside the photos is blocks (2026-11-25), in the order the
 // merchant sets: the trail, name, rating, price, variant picker, purchase options, quantity and buy buttons share one
 // product form wherever they sit (ui-kit ProductInfo), and the description, specifications, collapsible rows, text,
-// promises, up-sells and app blocks go anywhere between them. The buy buttons can be hidden, never removed. The retired
+// promises, up-sells, add-ons and app blocks go anywhere between them. The buy buttons can be hidden, never removed. The retired
 // fields held a hand-made product (name, price, photos, colors, sizes, reviews, specifications, links), a badge every
 // product would show, or what blocks hold now (the quantity box, attributes, up-sells, promises and details: a template
 // from before blocks gets them as blocks, blocks-migrate.ts); templates that still hold them save and render, and they
@@ -70,7 +70,7 @@ export const schema = {
   blocks: {
     types: [
       'product_breadcrumbs', 'product_title', 'product_rating', 'product_price', 'variant_picker', 'purchase_options', 'product_quantity', 'add_to_cart',
-      'product_description', 'product_specs', 'product_stock', 'collapsible_row', 'text', 'pairs_with', 'bundle_items', 'promises', 'app_block',
+      'product_description', 'product_specs', 'product_stock', 'collapsible_row', 'text', 'pairs_with', 'bundle_items', 'promises', 'product_addons', 'app_block',
     ],
     max: 30,
     default: [
@@ -79,6 +79,14 @@ export const schema = {
       { type: 'product_description' }, { type: 'bundle_items' }, { type: 'product_specs' },
     ],
     required: ['add_to_cart'],
+    // a template from before blocks: its old settings as blocks (blocks-migrate.ts)
+    migrate: [
+      { block: 'product_quantity', when: { show_quantity: 'hide' }, hide: true },
+      { block: 'product_specs', when: { show_attributes: 'hide' }, hide: true },
+      { block: 'pairs_with', props: { products: 'pairs' } },
+      { add: 'promises', props: { points: 'points' }, after: 'product_specs' },
+      { add: 'collapsible_row', items: 'details', props: { title: 'title', text: 'body' }, set: { open: 'closed' }, first: { open: 'open' }, after: 'product_specs' },
+    ],
   },
 } as const;
 
