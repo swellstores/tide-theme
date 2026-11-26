@@ -90,6 +90,12 @@ export const schema = {
   },
 } as const;
 
+// The Title block's heading has no margin in a product column (ui-kit.css); here it keeps its room above the rating or
+// whatever follows it in the heading.
+export const styles = `
+& .uk-product-head > [data-block-type="product_title"]:has(~ [data-block]:not(:empty)) > .uk-heading:last-child { margin-bottom: .45em; }
+`;
+
 type Props = { blocks?: ReactElement[]; t: Translate; product?: ProductData | null; site?: SiteInfo };
 
 // The gallery: the selected variant's photo (else the product's first) large, marked for the platform script, which
