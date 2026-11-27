@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { Container, Field, Icon, LocalizationMenu, NewsletterFields, newsletterOpen, Notice, PaymentIcons, paymentMarks, safeUrl, sectionColours, telHref } from 'ui-kit';
+import { ConsentSettingsLink, Container, Field, Icon, LocalizationMenu, NewsletterFields, newsletterOpen, Notice, PaymentIcons, paymentMarks, safeUrl, sectionColours, telHref } from 'ui-kit';
 import type { MenuData, MenuItem, SiteInfo, Translate } from 'ui-kit';
 
 export const schema = {
@@ -89,7 +89,8 @@ function column(item: MenuItem, i: number) {
 // centered row) or wordmark (columns, ending with the store's name set as large as the page's width allows). brand: the store's name, or the theme
 // settings' logo (the name without one). The bottom bar shows the store's payment methods as their brands' marks
 // (ui-kit PaymentIcons), never words; show_payments hide: none. It also credits Swell with a link to swell.is, in the
-// merchant's words (Store text footer.powered_by; blanked: no credit).
+// merchant's words (Store text footer.powered_by; blanked: no credit). Its "Cookie settings" link (ui-kit
+// ConsentSettingsLink, Store text consent.settings_link) shows only while the storefront's cookie banner is on.
 export default function Footer({ t, menu, layout, brand, show_payments, show_email, show_phone, tagline, note, newsletter, social = [], site, blocks, ...colours
 }: Props) {
   const store = site?.store;
@@ -184,6 +185,7 @@ export default function Footer({ t, menu, layout, brand, show_payments, show_ema
                   {policies.map((p) => <li key={p.id}><a href={p.url} style={{ color: 'inherit' }}>{p.title}</a></li>)}
                 </ul>
               ) : null}
+              <ConsentSettingsLink label={t('consent.settings_link')} />
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px 20px' }}>
               {links.length ? (

@@ -1,25 +1,36 @@
 {
-  "id": "tide",
-  "name": "Tide",
-  "type": "theme",
-  "version": "1.0.7",
-  "description": "A simple, clean storefront for any kind of shop, ready on day one",
-  "support_email": "support@swell.is",
-  "documentation_url": "https://developers.swell.is/app-guides/wave",
-  "repository_url": "https://github.com/swellstores/tide-theme",
-  "preview_src": "assets/preview.png",
-  "preview_mobile_src": "assets/preview-mobile.png",
-  "theme": {
-    "storefront": {
-      "app": "wave"
-    },
-    "listing": {
-      "industries": [],
-      "styles": ["minimal"],
-      "features": ["filters", "quick_add", "subscriptions", "swatches", "journal"],
-      "catalog_sizes": ["few", "some"],
-      "best_for": "Any kind of store, from a handful of products to a few hundred",
-      "demo_url": "https://cuffwell-demo--0iu67xko--preview.swell.store/__demo"
-    }
-  }
+	"id": "tide",
+	"name": "Tide",
+	"type": "theme",
+	"version": "1.0.8",
+	"description": "A simple, clean storefront for any kind of shop, ready on day one",
+	"support_email": "support@swell.is",
+	"documentation_url": "https://developers.swell.is/app-guides/wave",
+	"repository_url": "https://github.com/swellstores/tide-theme",
+	"preview_src": "assets/preview.png",
+	"preview_mobile_src": "assets/preview-mobile.png",
+	"theme": {
+		"storefront": {
+			"app": "wave"
+		},
+		"listing": {
+			"industries": [],
+			"styles": [
+				"minimal"
+			],
+			"features": [
+				"filters",
+				"quick_add",
+				"subscriptions",
+				"swatches",
+				"journal"
+			],
+			"catalog_sizes": [
+				"few",
+				"some"
+			],
+			"best_for": "Any kind of store, from a handful of products to a few hundred",
+			"demo_url": "https://cuffwell-demo--0iu67xko--preview.swell.store/__demo"
+		}
+	}
 }
