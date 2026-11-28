@@ -7,7 +7,8 @@ import { AuthForms, authHeading, Container, Heading, Notice } from 'ui-kit';
 // theme; this section lays them out. The view and what happened come from the page (a code, never Swell's text), shown
 // in the store's words (Store text). A store whose accounts are off shows only its message. When Wave sent the shopper
 // here from a page that needs an account (site.sign_in), the sign-in form says what it is for: "Sign in to see {label}."
-// (Store text login.sign_in_to_see; the label is the page's name as Wave looked it up, never the address's text).
+// (Store text login.sign_in_to_see; the label is the page's name as Wave looked it up, never the address's text); from
+// Store access's wall, why the store asks (Store text store_access.title, or store_access.prices_title).
 export const schema = {
   label: 'Sign-in form',
   fields: [
@@ -67,8 +68,10 @@ export default function LoginForm(p: Props) {
   };
   const heading = authHeading(auth, labels);
   const why = p.site?.sign_in;
-  const reason = why?.reason === 'app_page' && why.label && auth.view === 'login' && auth.accounts !== 'disabled'
-    ? t('login.sign_in_to_see', { label: why.label }) : '';
+  // Store access's wall sent the shopper (the storefront is for approved customers only): its own words
+  const access = why?.reason === 'store_access' ? t(p.site?.store_access?.mode === 'prices' ? 'store_access.prices_title' : 'store_access.title') : '';
+  const reason = auth.view !== 'login' || auth.accounts === 'disabled' ? ''
+    : why?.reason === 'app_page' && why.label ? t('login.sign_in_to_see', { label: why.label }) : access;
   return (
     <section style={{ padding: 'var(--uk-section-sm) 0' }}>
       <Container width="narrow">

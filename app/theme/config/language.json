@@ -102,8 +102,8 @@
       "addons": "Heading above a product form’s add-on choices",
       "addon": "An add-on choice in a product form ({name} and {price} are filled in)",
       "pin": "A product pin on a photo, for screen readers ({name} is filled in)",
-      "sign_in_prices": "Shown instead of prices and add to cart when the store shows prices to signed-in customers only",
-      "prices_pending": "Shown instead of prices to a signed-in customer the store hasn't approved yet (links to the theme's apply page when it has one)",
+      "sign_in_prices": "Shown instead of prices and add to cart while the storefront's Store access setting (or the theme) shows prices to approved customers only",
+      "prices_pending": "Shown instead of prices to a signed-in customer the store hasn't approved yet (links to the store's application page when it has one)",
       "related": "Heading of a product grid on a product page that has a link but no heading of its own",
       "in_stock": "The Stock block on a product page when the chosen variant is in stock",
       "shipping_returns": "Title of a new \"Shipping & returns\" row (Add block on the product page); the row is yours to edit once added",
@@ -245,6 +245,29 @@
     "next": "Next",
     "page": "Page",
     "of": "of"
+  },
+  "carousel": {
+    "$label": "Carousel",
+    "$notes": {
+      "label": "A carousel's name when its section has no heading of its own (screen readers)",
+      "carousel": "What a carousel is called (screen readers)",
+      "slide": "What one slide of a carousel is called (screen readers)",
+      "position": "A slide's name in a carousel (screen readers; {number} and {total} are filled in)",
+      "previous": "Carousel button that shows the previous slides (screen readers)",
+      "next": "Carousel button that shows the next slides (screen readers)",
+      "show": "A carousel dot that shows that slide (screen readers; {number} and {total} are filled in)",
+      "pause": "Carousel button that stops the slides changing by themselves (screen readers)",
+      "play": "Carousel button that starts the slides changing by themselves again (screen readers)"
+    },
+    "label": "Slides",
+    "carousel": "carousel",
+    "slide": "slide",
+    "position": "{number} of {total}",
+    "previous": "Previous slide",
+    "next": "Next slide",
+    "show": "Show slide {number}",
+    "pause": "Pause slides",
+    "play": "Play slides"
   },
   "account": {
     "$label": "Account",
@@ -606,5 +629,32 @@
     "close": "Close",
     "saved": "Your cookie choices are saved.",
     "settings_link": "Cookie settings"
+  },
+  "store_access": {
+    "$label": "Store access",
+    "$notes": {
+      "title": "Heading of the page a shopper who isn't signed in sees while the whole store is for approved customers only (the storefront's Store access setting)",
+      "text": "Words under that heading",
+      "pending_title": "Heading of that page for a signed-in customer the store hasn't approved yet",
+      "pending_text": "Words under that heading",
+      "prices_title": "Heading of that page on the cart while prices are for approved customers only",
+      "prices_text": "Words under that heading",
+      "sign_in": "Sign in button on that page",
+      "create_account": "Create an account link on that page (when the store takes new accounts)",
+      "apply": "Apply for an account button on that page (when the store has an application page)",
+      "sign_out": "Sign out button on that page, for a signed-in customer who isn't approved",
+      "questions": "Words before the store's phone and email on that page"
+    },
+    "title": "Sign in to shop",
+    "text": "This store is open to approved customers. Sign in to your account, or apply for one.",
+    "pending_title": "Your account is waiting for approval",
+    "pending_text": "Thanks for signing in. You can shop here once we've approved your account.",
+    "prices_title": "Sign in to see prices",
+    "prices_text": "Prices and ordering are for approved customers. Sign in to your account, or apply for one.",
+    "sign_in": "Sign in",
+    "create_account": "Create an account",
+    "apply": "Apply for an account",
+    "sign_out": "Sign out",
+    "questions": "Questions? Contact us:"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "title": "Store access",
+  "sections": [
+    {
+      "id": "store-access",
+      "type": "store_access",
+      "props": {}
+    }
+  ]
+}
